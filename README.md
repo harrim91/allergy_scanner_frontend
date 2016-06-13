@@ -1,12 +1,14 @@
 # Allergy Scanner
 
 Makers Academy Final Project
+----
 - Alex Robertson
 - Mara Wanot
 - Michael Harrison
 - Sity Shah
 
 User Stories
+----
 ```
 So that I can find the specific product,
 I want to be able to input the products barcode.
