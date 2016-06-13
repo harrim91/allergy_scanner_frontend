@@ -1,14 +1,11 @@
 # Allergy Scanner
 
 Makers Academy Final Project
-----
-- Alex Robertson
-- Mara Wanot
-- Michael Harrison
-- Sity Shah
+----------------------------
+The app is designed to help people with food allergies or dietary requirements quickly know whether they can eat a certain food.
 
 User Stories
-----
+------------
 ```
 So that I can find the specific product,
 I want to be able to input the products barcode.
@@ -31,3 +28,10 @@ I want to be able to save details to my user account.
 So that I can quickly set preferences,
 I want to be able to choose default food profiles.
 ```
+
+Authors
+-------
+- Alex Robertson
+- Mara Wanot
+- Michael Harrison
+- Sity Shah
