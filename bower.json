@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "dependencies": {
     "ionic": "v1.1.0",
-    "ngCordova": "v0.1.20-alpha",
+    "ngCordova": "^0.1.26-alpha",
     "angular-mocks": "^1.5.6"
   },
   "devDependencies": {

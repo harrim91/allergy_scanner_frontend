@@ -30,6 +30,7 @@
     <!-- endbower -->
     <!-- endbuild -->
 
+
     <!-- cordova script (this will be a 404 during development) -->
     <script src="cordova.js"></script>
 
@@ -43,12 +44,11 @@
     <ion-pane>
       <ion-header-bar class="bar-stable">
         <h1 class="title">Happy Belly</h1>
-
       </ion-header-bar>
-      <ion-content>
+      <ion-content ng-controller="MainController">
         <div class="row">
             <div class="col text-center">
-              <button id='scan-button' class="button icon ion-camera"> Scan Barcode</button>
+              <button id='scan-button' ng-click="scanBarcode()" class="button icon ion-camera"> Scan Barcode</button>
             </div>
           </div>
       </ion-content>
