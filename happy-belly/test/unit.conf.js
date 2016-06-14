@@ -20,8 +20,6 @@ module.exports = function(config) {
       '../node_modules/moment/min/moment.min.js',
       '../app/**/*.js',
       '../app/bower_components/angular-mocks/angular-mocks.js',
-      'unit/**/*.js',
-      'unit/*.js',
       '../test/unit/*.js',
       '../test/unit'
     ],
