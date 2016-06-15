@@ -5,7 +5,7 @@ module.exports = function(config) {
   config.set({
 
     // base path that will be used to resolve all patterns (eg. files, exclude)
-    basePath: '',
+    basePath: '../',
 
 
     // frameworks to use
@@ -15,13 +15,14 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-      '../www/lib/ionic/js/ionic.bundle.js',
-      '../app/bower_components/ionic/release/js/ionic.bundle.js',
-      '../node_modules/moment/min/moment.min.js',
-      '../app/**/*.js',
-      '../app/bower_components/angular-mocks/angular-mocks.js',
-      '../test/unit/*.js',
-      '../test/unit'
+      'app/bower_components/jquery/dist/jquery.js',
+      'www/lib/ionic/js/ionic.bundle.js',
+      'app/bower_components/ionic/release/js/ionic.bundle.js',
+      'node_modules/moment/min/moment.min.js',
+      'app/scripts/**/*.js',
+      'app/bower_components/angular-mocks/angular-mocks.js',
+      'test/unit/*.js',
+      'test/unit'
     ],
 
 
@@ -61,11 +62,28 @@ module.exports = function(config) {
 
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    browsers: ['PhantomJS'],
+    browsers: ['Chrome'],
 
 
     // Continuous Integration mode
     // if true, Karma captures browsers, runs the tests and exits
-    singleRun: false
+    singleRun: false,
+
+    plugins: [
+              'karma-spec-reporter',
+              'karma-chrome-launcher',
+              'karma-jasmine'
+    ],
+
+    reporters: ["spec"],
+
+    specReporter: {
+      maxLogLines: 5,
+      suppressErrorSummary: true,
+      suppressFailed: false,
+      suppressPassed: false,
+      suppressSkipped: true,
+      showSpecTiming: false
+    }
   })
 }
