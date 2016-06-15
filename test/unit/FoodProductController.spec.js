@@ -1,5 +1,7 @@
 describe('FoodProductController', function() {
 
+  var controller, service;
+
   module(function($provide) {
     $provide.service('FoodProductService', function() {
       this.getProductInfo = jasmine.createSpy('getProductInfo').andCallFake(function(barcode) {
@@ -8,16 +10,12 @@ describe('FoodProductController', function() {
     });
   });
 
-  var controller, service;
-
   beforeEach(module('happyBellyApp'));
 
   beforeEach(inject(function($controller, FoodProductService) {
     controller = $controller('FoodProductController');
     service = FoodProductService;
   }));
-
-
 
   it('is initialized with no food product', function() {
     expect(controller.foodProduct).not.toBeDefined();
