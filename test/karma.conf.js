@@ -18,16 +18,21 @@ module.exports = function(config) {
       '../www/lib/ionic/js/ionic.bundle.js',
       '../app/bower_components/ionic/release/js/ionic.bundle.js',
       '../node_modules/moment/min/moment.min.js',
-      '../app/**/*.js',
+      // '../app/**/*.js',
       '../app/bower_components/angular-mocks/angular-mocks.js',
       '../test/unit/*.js',
       '../test/unit'
+    ],
+    plugins: [
+      "karma-jasmine",
+      "karma-chrome-launcher"
     ],
 
 
     // list of files to exclude
     exclude: [
     ],
+
 
 
     // preprocess matching files before serving them to the browser
@@ -61,7 +66,7 @@ module.exports = function(config) {
 
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    browsers: ['PhantomJS'],
+    browsers: ['Chrome'],
 
 
     // Continuous Integration mode

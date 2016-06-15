@@ -23,6 +23,7 @@ app.run(function($ionicPlatform) {
   });
 });
 
+
 app.controller("MainController", function($scope, $cordovaBarcodeScanner){
   $scope.scanBarcode = function(){
     $cordovaBarcodeScanner.scan().then(function(imageData){
@@ -32,4 +33,8 @@ app.controller("MainController", function($scope, $cordovaBarcodeScanner){
       console.log('an error has occured ' + error);
     });
   };
+  $scope.test = function(){
+    return 5;
+  };
+
 });
