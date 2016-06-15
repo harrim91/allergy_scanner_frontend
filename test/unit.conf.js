@@ -16,11 +16,13 @@ module.exports = function(config) {
     // list of files / patterns to load in the browser
     files: [
       'app/bower_components/jquery/dist/jquery.js',
-      'www/lib/ionic/js/ionic.bundle.js',
       'app/bower_components/ionic/release/js/ionic.bundle.js',
-      'node_modules/moment/min/moment.min.js',
-      'app/scripts/**/*.js',
       'app/bower_components/angular-mocks/angular-mocks.js',
+      'app/bower_components/ng-token-auth/dist/ng-token-auth.js',
+      'app/bower_components/angular-cookie/dist/angular-cookie.js',
+      'app/scripts/**/*.js',
+      'www/lib/ionic/js/ionic.bundle.js',
+      'node_modules/moment/min/moment.min.js',
       'test/unit/*.js',
       'test/unit'
     ],
