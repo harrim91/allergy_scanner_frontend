@@ -19,7 +19,7 @@ module.exports = function(config) {
       'app/bower_components/ionic/release/js/ionic.bundle.js',
       'app/bower_components/angular-mocks/angular-mocks.js',
       'app/bower_components/ng-token-auth/dist/ng-token-auth.js',
-      'app/bower_components/angular-cookie/dist/angular-cookie.js',
+      'app/bower_components/angular-cookie/angular-cookie.js',
       'app/scripts/**/*.js',
       'www/lib/ionic/js/ionic.bundle.js',
       'node_modules/moment/min/moment.min.js',

@@ -1,45 +1,45 @@
 describe('FoodProductController', function() {
 
-  // function mockFoodProductServiceGetProductInfo(productInfo) {
-  //   module(function ($provide) {
-  //     var foodProductService = { getProductInfo: null };
-  //     spyOn(foodProductService, 'getProductInfo')
-  //       .and.returnValue({
-  //         then: function(resolve) {
-  //           resolve(productInfo);
-  //         }
-  //       });
+  function mockFoodProductServiceGetProductInfo(productInfo) {
+    module(function ($provide) {
+      var foodProductService = { getProductInfo: null };
+      spyOn(foodProductService, 'getProductInfo')
+        .and.returnValue({
+          then: function(resolve) {
+            resolve(productInfo);
+          }
+        });
 
-  //       $provide.value('FoodProductService', foodProductService);
-  //   });
-  // };
+      $provide.value('FoodProductService', foodProductService);
+    });
+  };
+
+  var foodProductController;
+
+  beforeEach(module('happyBellyApp'));
+
+  // beforeEach(mockFoodProductServiceGetProductInfo('food'));
+
+  beforeEach(inject(function($controller) {
+    foodProductController = $controller('FoodProductController');
+  }));
 
   describe('initialization', function() {
     it('is initialized with no food product', function() {
-      var foodProductController;
-
-      module('happyBellyApp')
-
-      // mockFoodProductServiceGetProductInfo('food');
-
-      inject(function($controller) {
-        foodProductController = $controller('FoodProductController');
-      });
-
       expect(foodProductController.foodProduct).not.toBeDefined();
     });
 
   });
 
 
-  // describe('#getProductInfo', function() {
-  //   it('sets the foodProduct attribute', function() {
-  //     controller.getProductInfo(1234);
-  //     expect(controller.foodProduct).toEqual('food');
-  //   });
-  //   it('calls the service', function() {
-  //     controller.getProductInfo(1234);
-  //     expect(service.getProductInfo).toHaveBeenCalled();
-  //   });
-  // });
+  describe('#getProductInfo', function() {
+    it('sets the foodProduct attribute', function() {
+      foodProductController.getProductInfo(1234);
+      expect(foodProductController.foodProduct).toEqual('food');
+    });
+    // it('calls the service', function() {
+    //   foodProductController.getProductInfo(1234);
+    //   expect(foodProductService.getProductInfo).toHaveBeenCalled();
+    // });
+  });
 });
