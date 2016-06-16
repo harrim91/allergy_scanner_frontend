@@ -1,16 +1,16 @@
 angular.module('happyBellyApp')
-  .controller('FoodProductController', ['$state', function($state){
+  .controller('FoodProductController', ['FoodProductService', '$state', function(FoodProductService, $state){
     var self = this;
+    API_URL = 'http://world.openfoodfacts.org/api/v0/product/'
     self.getProductInfo = getProductInfo;
 
     function getProductInfo(barcode) {
-        self.foodProductInfo = {
-                                brand: 'Thai Kitchen',
-                                product: 'Stir-Fry Rice Noodles',
-                                ingredients: ['Rice Noodles', 'Seasoning']
-                              };
-        debugger
-        _redirectToProductInfo();
+      FoodProductService.getProductInfo(API_URL, barcode)
+        .then(function(foodProductInfo) {
+          self.foodProductInfo = foodProductInfo
+      })
+
+      _redirectToProductInfo();
     }
 
     function _redirectToProductInfo() {

@@ -10,7 +10,7 @@ describe('FoodProductService', function(){
       {
         brand: 'Thai Kitchen',
         product: 'Stir-Fry Rice Noodles',
-        ingredients: ['Rice Noodles', 'Seasoning'],
+        ingredients: [ { text: 'Rice Noodles' }, { text: 'Seasoning' } ]
       }
     };
 

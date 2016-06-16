@@ -42,9 +42,5 @@ describe('FoodProductController', function() {
                   ingredients: ['Rice Noodles', 'Seasoning']
                 });
     });
-    // it('calls the service', function() {
-    //   foodProductController.getProductInfo(1234);
-    //   expect(foodProductService.getProductInfo).toHaveBeenCalled();
-    // });
   });
 });
