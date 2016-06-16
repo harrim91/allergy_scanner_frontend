@@ -1,6 +1,6 @@
 describe('finding product info', function() {
   beforeEach(function() {
-    browser.get('/#/search');
+    browser.get('/');
   });
 
   it('can be given a barcode and return product information', function() {
