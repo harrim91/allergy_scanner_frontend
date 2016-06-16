@@ -26,7 +26,7 @@ describe('FoodProductController', function() {
 
   describe('initialization', function() {
     it('is initialized with no food product', function() {
-      expect(foodProductController.foodProduct).not.toBeDefined();
+      expect(foodProductController.foodProductInfo).not.toBeDefined();
     });
 
   });
@@ -35,7 +35,12 @@ describe('FoodProductController', function() {
   describe('#getProductInfo', function() {
     it('sets the foodProduct attribute', function() {
       foodProductController.getProductInfo(1234);
-      expect(foodProductController.foodProduct).toEqual('food');
+      expect(foodProductController.foodProductInfo)
+        .toEqual({
+                  brand: 'Thai Kitchen',
+                  product: 'Stir-Fry Rice Noodles',
+                  ingredients: ['Rice Noodles', 'Seasoning']
+                });
     });
     // it('calls the service', function() {
     //   foodProductController.getProductInfo(1234);
