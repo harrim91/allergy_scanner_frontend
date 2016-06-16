@@ -5,11 +5,9 @@ angular.module('happyBellyApp')
     self.getProductInfo = getProductInfo;
 
     function getProductInfo(barcode) {
-      FoodProductService.getProductInfo(API_URL, barcode)
-        .then(function(foodProductInfo) {
-          self.foodProductInfo = foodProductInfo
-      })
-
+      self.foodProductInfo
+      console.log(FoodProductService.getProductInfo(API_URL, barcode));
+      console.log(self.foodProductInfo);
       _redirectToProductInfo();
     }
 

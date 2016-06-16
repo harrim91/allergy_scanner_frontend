@@ -5,29 +5,35 @@ angular.module('happyBellyApp')
 
     self.getProductInfo = function(apiUrl, barcode) {
       var formattedUrl = _formatUrl(apiUrl, barcode);
-      return $http.get(formattedUrl)
+      var config = { headers: {
+          'if-modified-since': undefined
+        }
+      };
+      return _getDatafromApi(formattedUrl, config)
         .then(function(response) {
-          _handleResponse(response);
+          _handleResponse(response.data.product);
         });
     };
 
+    function _getDatafromApi(formattedUrl, config){
+      return $http.get(formattedUrl, config);
+    }
+
     function _formatUrl(url, parameter) {
       return url + parameter + '.json';
-    };
+    }
 
     function _handleResponse(response) {
       var ingredients = _listIngredients(response);
-      response.product.map(function(foodProduct) {
-        return new FoodProductFactory(foodProduct.brands, foodProduct.product_name, ingredients);
-      });
-    };
+      return new FoodProductFactory(response.brands, response.product_name, ingredients);
+    }
 
     function _listIngredients(response) {
       var ingredients = [];
-      response.product.ingredients.forEach(function(ingredient) {
+      response.ingredients.forEach(function(ingredient) {
         ingredients.push(ingredient.text);
       });
       return ingredients;
-    };
+    }
 
   }]);
