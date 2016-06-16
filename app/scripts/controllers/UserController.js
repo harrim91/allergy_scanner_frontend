@@ -1,13 +1,12 @@
 angular.module('happyBellyApp')
-  .controller('UserController', function($scope, $auth){
+  .controller('UserController', function($scope, $auth, $state){
     $scope.handleRegBtnClick = function() {
-      console.log("hi") 
       $auth.submitRegistration($scope.registrationForm)
         .then(function(resp) {
-        console.log("success")
+         $state.go('search');
         })
         .catch(function(resp) {
-        console.log("fail")
+        console.log(resp);
         });
     };
 

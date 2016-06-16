@@ -25,12 +25,6 @@ angular.module('happyBellyApp', ['ionic', 'ng-token-auth'])
       url: '/sign_up',
       templateUrl: 'views/sign_up.html',
       controller: 'UserController'
-      // onEnter: ['$state', '$auth', function($state, auth) {
-        console.log(auth, auth.user, auth.user.signedIn);
-        if(auth.user.signedIn) {
-          $state.go('index');
-        };
-      }]
     // }).then(function(response) {
     //   console.log("yo")
     //   if(response.status === "success") {
