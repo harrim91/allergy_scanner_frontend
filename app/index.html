@@ -47,10 +47,12 @@
     <ion-pane>
       <ion-header-bar class="bar-stable">
         <h1 class="title">Happy Belly</h1>
-        <button id="sign-up-btn" class="btn btn-primary btn-lg" ng-click="signUpNav()">Sign up</button>
-        <button class="btn btn-primary btn-lg" ng-click='signOut()'>Sign out</button>
+        <a id='sign-up-btn' class='button button-positive button-large' ng-href="#sign_up">Sign up</a>
+        <a class='button button-positive button-large' ng-href="#sign_in">Sign in</a>
+        <a class='button button-assertive button-large' ng-click='signOut()'>Sign out</a>
       </ion-header-bar>
       <ion-content>
+
         <section ui-view></section>
       </ion-content>
     </ion-pane>

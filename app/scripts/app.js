@@ -19,11 +19,17 @@ angular.module('happyBellyApp', ['ionic', 'ng-token-auth'])
   });
 })
 
-.config(function($stateProvider, $urlRouterProvider, $authProvider) {
+.config(function($authProvider, $stateProvider, $urlRouterProvider) {
   $stateProvider
     .state('sign_up', {
       url: '/sign_up',
-      templateUrl: 'views/sign_up.html'
+      templateUrl: 'views/sign_up.html',
+      onEnter: ['$state', '$auth', function($state, Auth) {
+        console.log(Auth);
+        Auth.currentUser().then(function (){
+          $state.go('index');
+        });
+      }]
     })
     .state('search', {
       url: '/search',
@@ -33,11 +39,12 @@ angular.module('happyBellyApp', ['ionic', 'ng-token-auth'])
       url: '/sign_in',
       templateUrl: 'views/sign_in.html'
     })
-    
+
 
   $urlRouterProvider.otherwise('/');
 
   $authProvider.configure({
       apiUrl: 'http://localhost:3000'
   });
+
 });
