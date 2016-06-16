@@ -11,7 +11,7 @@ angular.module('happyBellyApp')
       };
       return _getDatafromApi(formattedUrl, config)
         .then(function(response) {
-          _handleResponse(response.data.product);
+          return _handleResponse(response.data.product);
         });
     };
 
