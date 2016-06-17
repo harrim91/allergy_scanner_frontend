@@ -18,6 +18,17 @@ angular.module('happyBellyApp')
         });
     };
 
+    $scope.handleLoginBtnClick = function(loginForm) {
+      $auth.submitLogin(loginForm)
+        .then(function(resp) {
+          console.log('logged in');
+          $state.go('search');
+        })
+        .catch(function(resp) {
+          console.log(resp);
+        });
+    };
+
     self.userCheck = function() {
       console.log(self.currentUser);
     };
