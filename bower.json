@@ -6,7 +6,8 @@
     "ngCordova": "v0.1.20-alpha",
     "angular-mocks": "^1.5.6",
     "ng-tour": "ng-route#*",
-    "ng-token-auth": "^0.0.29"
+    "ng-token-auth": "^0.0.29",
+    "angular-cookie": "^4.1.0"
   },
   "devDependencies": {
     "angular-mocks": "^1.5.6",

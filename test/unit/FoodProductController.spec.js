@@ -1,35 +1,46 @@
 describe('FoodProductController', function() {
 
-  var controller, service;
+  function mockFoodProductServiceGetProductInfo(productInfo) {
+    module(function ($provide) {
+      var foodProductService = { getProductInfo: null };
+      spyOn(foodProductService, 'getProductInfo')
+        .and.returnValue({
+          then: function(resolve) {
+            resolve(productInfo);
+          }
+        });
 
-  module(function($provide) {
-    $provide.service('FoodProductService', function() {
-      this.getProductInfo = jasmine.createSpy('getProductInfo').andCallFake(function(barcode) {
-        return 'food';
-      });
+      $provide.value('FoodProductService', foodProductService);
     });
-  });
+  };
+
+  var foodProductController;
 
   beforeEach(module('happyBellyApp'));
 
-  beforeEach(inject(function($controller, FoodProductService) {
-    controller = $controller('FoodProductController');
-    service = FoodProductService;
+  // beforeEach(mockFoodProductServiceGetProductInfo('food'));
+
+  beforeEach(inject(function($controller) {
+    foodProductController = $controller('FoodProductController');
   }));
 
-  it('is initialized with no food product', function() {
-    expect(controller.foodProduct).not.toBeDefined();
+  describe('initialization', function() {
+    it('is initialized with no food product', function() {
+      expect(foodProductController.foodProductInfo).not.toBeDefined();
+    });
+
   });
 
+
   describe('#getProductInfo', function() {
-    spyOn(service, 'getProductInfo');
     it('sets the foodProduct attribute', function() {
-      controller.getProductInfo(1234);
-      expect(controller.foodProduct).toEqual('food');
-    });
-    it('calls the service', function() {
-      controller.getProductInfo(1234);
-      expect(service.getProductInfo).toHaveBeenCalled();
+      foodProductController.getProductInfo(1234);
+      expect(foodProductController.foodProductInfo)
+        .toEqual({
+                  brand: 'Thai Kitchen',
+                  product: 'Stir-Fry Rice Noodles',
+                  ingredients: ['Rice Noodles', 'Seasoning']
+                });
     });
   });
 });

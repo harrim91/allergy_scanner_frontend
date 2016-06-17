@@ -7,6 +7,7 @@ describe('finding product info', function() {
 
     $('#barcode-input').sendKeys('737628064502');
     $('#barcode-submit').click();
-    expect($('#product-name').getText()).toMatch('Thai Kitchen Stir-Fry Rice Noodles')
+    expect(browser.getCurrentUrl()).toMatch('/product-info')
+    expect($('#product-name').getText()).toMatch('Thai Kitchen Stir-Fry Rice Noodles');
   });
 });
