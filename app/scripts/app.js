@@ -1,6 +1,6 @@
 angular.module('happyBellyApp', ['ionic', 'ng-token-auth'])
 
-app.run(function($ionicPlatform) {
+.run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
     if(window.cordova && window.cordova.plugins.Keyboard) {
       // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
@@ -16,21 +16,6 @@ app.run(function($ionicPlatform) {
       StatusBar.styleDefault();
     }
   });
-});
-
-
-app.controller("MainController", function($scope, $cordovaBarcodeScanner){
-  $scope.scanBarcode = function(){
-    $cordovaBarcodeScanner.scan().then(function(imageData){
-      alert(imageData.text);
-      console.log('format ' + imageData.format);
-    }, function(error){
-      console.log('an error has occured ' + error);
-    });
-  };
-  $scope.test = function(){
-    return 5;
-  };
 })
 
 .config(function($authProvider, $stateProvider, $urlRouterProvider) {

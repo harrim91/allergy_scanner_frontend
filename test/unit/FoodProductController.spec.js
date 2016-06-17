@@ -1,27 +1,25 @@
 describe('FoodProductController', function() {
 
-  function mockFoodProductServiceGetProductInfo(productInfo) {
-    module(function ($provide) {
-      var foodProductService = { getProductInfo: null };
-      spyOn(foodProductService, 'getProductInfo')
-        .and.returnValue({
-          then: function(resolve) {
-            resolve(productInfo);
-          }
-        });
-
-      $provide.value('FoodProductService', foodProductService);
-    });
-  };
-
   var foodProductController;
+  var mockFoodProductService = { getProductInfo: function() {} };
+  var foodProduct = {
+            brand: 'Thai Kitchen',
+            product: 'Stir-Fry Rice Noodles',
+            ingredients: ['Rice Noodles', 'Seasoning']
+          };
 
-  beforeEach(module('happyBellyApp'));
 
-  // beforeEach(mockFoodProductServiceGetProductInfo('food'));
+  beforeEach(function() {
+    module('happyBellyApp', function($provide) {
+      $provide.value('FoodProductService', mockFoodProductService);
+    });
+  });
 
   beforeEach(inject(function($controller) {
+    var promise = { then: function() { return foodProduct } };
+    spyOn(mockFoodProductService, 'getProductInfo').and.returnValue(promise);
     foodProductController = $controller('FoodProductController');
+    // promise.then.mostRecentCall.args[0](foodProduct);
   }));
 
   describe('initialization', function() {
@@ -30,7 +28,6 @@ describe('FoodProductController', function() {
     });
 
   });
-
 
   describe('#getProductInfo', function() {
     it('sets the foodProduct attribute', function() {
