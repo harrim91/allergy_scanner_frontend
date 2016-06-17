@@ -61,5 +61,8 @@
     "org.apache.cordova.console",
     "com.ionic.keyboard",
     "https://github.com/phonegap/phonegap-plugin-barcodescanner.git"
+  ],
+  "cordovaPlatforms": [
+    "android"
   ]
 }
