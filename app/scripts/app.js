@@ -1,4 +1,4 @@
-angular.module('happyBellyApp', ['ionic', 'ng-token-auth'])
+angular.module('happyBellyApp', ['ionic', 'ng-token-auth', 'ngCordova'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
