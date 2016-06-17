@@ -37,7 +37,7 @@ angular.module('happyBellyApp', ['ionic', 'ng-token-auth'])
     .state('sign_in', {
       url: '/sign_in',
       templateUrl: 'views/sign_in.html'
-    })
+    });
 
 
   $urlRouterProvider.otherwise('/');

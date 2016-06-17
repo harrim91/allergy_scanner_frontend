@@ -7,6 +7,6 @@ describe ('User', function() {
     $('#password').sendKeys("12345678")
     $('#password-conf').sendKeys("12345678")
     $('#register').click()
-    expect($('#message').getText()).toEqual('Thanks for registering');
+    expect($('#user').getText()).toEqual('mara@gmail.com');
   });
 });

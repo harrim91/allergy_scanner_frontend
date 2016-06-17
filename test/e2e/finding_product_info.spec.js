@@ -4,6 +4,7 @@ describe('finding product info', function() {
   });
 
   it('can be given a barcode and return product information', function() {
+
     $('#barcode-input').sendKeys('737628064502');
     $('#barcode-submit').click();
     expect($('#product-name').getText()).toMatch('Thai Kitchen Stir-Fry Rice Noodles')

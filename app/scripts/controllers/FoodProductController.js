@@ -6,8 +6,5 @@ angular.module('happyBellyApp')
 
     function getProductInfo(barcode) {
         self.foodProduct = 'food';
-    };
-
-
-
+    }
   }]);
