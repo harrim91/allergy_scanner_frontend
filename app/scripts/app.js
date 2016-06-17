@@ -1,9 +1,4 @@
-// Ionic Starter App
-
-// angular.module is a global place for creating, registering and retrieving Angular modules
-// 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
-// the 2nd parameter is an array of 'requires'
-var app = angular.module('starter', ['ionic', 'ngCordova']);
+angular.module('happyBellyApp', ['ionic', 'ng-token-auth'])
 
 app.run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -36,5 +31,32 @@ app.controller("MainController", function($scope, $cordovaBarcodeScanner){
   $scope.test = function(){
     return 5;
   };
+})
+
+.config(function($authProvider, $stateProvider, $urlRouterProvider) {
+  $stateProvider
+    .state('sign_up', {
+      url: '/sign_up',
+      templateUrl: 'views/sign_up.html',
+      controller: 'UserController'
+    })
+    .state('sign_in', {
+      url: '/sign_in',
+      templateUrl: 'views/sign_in.html'
+    })
+    .state('search', {
+      url: '/',
+      templateUrl: 'views/search.html'
+    })
+    .state('product-info', {
+      url: '/product-info',
+      templateUrl: 'views/product_info.html'
+    });
+
+  $urlRouterProvider.otherwise('/');
+
+  $authProvider.configure({
+      apiUrl: 'http://localhost:3000'
+  });
 
 });

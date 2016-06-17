@@ -27,6 +27,8 @@
     <script src="bower_components/ionic/release/js/ionic-angular.js"></script>
     <script src="bower_components/ngCordova/dist/ng-cordova.js"></script>
     <script src="bower_components/angular-mocks/angular-mocks.js"></script>
+    <script src="bower_components/angular-cookie/angular-cookie.js"></script>
+    <script src="bower_components/ng-token-auth/dist/ng-token-auth.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -34,27 +36,32 @@
     <!-- cordova script (this will be a 404 during development) -->
     <script src="cordova.js"></script>
 
-    the cat sat on the mat and it was very fat look at meeeeee 
+    the cat sat on the mat and it was very fat look at meeeeee
 
     <!-- your app's js -->
     <!-- build:js scripts/scripts.js -->
     <script src="scripts/app.js"></script>
     <script src="scripts/configuration.js"></script>
+    <script src="scripts/controllers/FoodProductController.js"></script>
+    <script src="scripts/factories/FoodProductFactory.js"></script>
+    <script src="scripts/services/FoodProductService.js"></script>
+    <script src="scripts/controllers/UserController.js"></script>
     <!-- endbuild -->
   </head>
-  <body ng-app="starter">
+
+  <body ng-app="happyBellyApp" ng-controller="UserController as userCtrl">
     <ion-pane>
       <ion-header-bar class="bar-stable">
         <h1 class="title">Happy Belly</h1>
+        <a id='sign-up-btn' class='button button-positive button-large' ng-href="#sign_up">Sign up</a>
+        <a class='button button-positive button-large' ng-href="#sign_in">Sign in</a>
+        <a class='button button-assertive button-large' ng-click='signOut()'>Sign out</a>
       </ion-header-bar>
-      <ion-content ng-controller="MainController">
-        <div class="row">
-            <div class="col text-center">
-              <button id='scan-button' ng-click="scanBarcode()" class="button icon ion-camera"> Scan Barcode</button>
-            </div>
-          </div>
-          <ion-toggle ng-model="airplaneMode" toggle-class="toggle-dak">Airplane Mode</ion-toggle>
+
+      <ion-content ng-controller="FoodProductController as foodProductCtrl">
+        <section ui-view></section>
       </ion-content>
     </ion-pane>
   </body>
+
 </html>
