@@ -42,15 +42,19 @@
     <script src="scripts/controllers/FoodProductController.js"></script>
     <script src="scripts/factories/FoodProductFactory.js"></script>
     <script src="scripts/services/FoodProductService.js"></script>
+    <script src="scripts/controllers/UserController.js"></script>
     <!-- endbuild -->
   </head>
 
-  <body ng-app="happyBellyApp">
+  <body ng-app="happyBellyApp" ng-controller="UserController as userCtrl">
     <ion-pane>
       <ion-header-bar class="bar-stable">
         <h1 class="title">Happy Belly</h1>
+        <a id='sign-up-btn' class='button button-positive button-large' ng-href="#sign_up">Sign up</a>
+        <a class='button button-positive button-large' ng-href="#sign_in">Sign in</a>
+        <a class='button button-assertive button-large' ng-click='signOut()'>Sign out</a>
       </ion-header-bar>
-      <ion-content ng-controller="FoodProductController as ctrl">
+      <ion-content ng-controller="FoodProductController as foodProductCtrl">
         <section ui-view></section>
       </ion-content>
     </ion-pane>
