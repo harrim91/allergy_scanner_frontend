@@ -1,7 +1,7 @@
 describe('FoodProductController', function() {
 
   var foodProductController;
-  var mockFoodProductService = { getProductInfo: function() {} };
+  var mockFoodProductService = { getProductInfo: null };
   var foodProduct = {
             brand: 'Thai Kitchen',
             product: 'Stir-Fry Rice Noodles',
@@ -16,10 +16,13 @@ describe('FoodProductController', function() {
   });
 
   beforeEach(inject(function($controller) {
-    var promise = { then: function() { return foodProduct } };
-    spyOn(mockFoodProductService, 'getProductInfo').and.returnValue(promise);
+    spyOn(mockFoodProductService, 'getProductInfo')
+      .and.returnValue({
+        then: function(resolve) {
+          resolve(foodProduct);
+        }
+    });
     foodProductController = $controller('FoodProductController');
-    // promise.then.mostRecentCall.args[0](foodProduct);
   }));
 
   describe('initialization', function() {
@@ -31,13 +34,8 @@ describe('FoodProductController', function() {
 
   describe('#getProductInfo', function() {
     it('sets the foodProduct attribute', function() {
-      foodProductController.getProductInfo(1234);
-      expect(foodProductController.foodProductInfo)
-        .toEqual({
-                  brand: 'Thai Kitchen',
-                  product: 'Stir-Fry Rice Noodles',
-                  ingredients: ['Rice Noodles', 'Seasoning']
-                });
+      foodProductController.getProductInfo();
+      expect(foodProductController.foodProductInfo).toEqual(foodProduct);
     });
   });
 });
