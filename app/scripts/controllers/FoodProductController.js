@@ -15,6 +15,7 @@ angular.module('happyBellyApp')
     }
 
     function scanBarcode() {
+      console.log($cordovaBarcodeScanner);
       document.addEventListener('deviceready', function(){
         $cordovaBarcodeScanner.scan().then(function(imageData){
           self.getProductInfo(imageData.format);
