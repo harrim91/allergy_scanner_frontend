@@ -15,10 +15,12 @@ angular.module('happyBellyApp')
     }
 
     function scanBarcode() {
-      $cordovaBarcodeScanner.scan().then(function(imageData){
-        self.getProductInfo(imageData.format);
-      }, function(error){
-        console.log('an error has occured ' + error);
+      document.addEventListener('deviceready', function(){
+        $cordovaBarcodeScanner.scan().then(function(imageData){
+          self.getProductInfo(imageData.format);
+        }, function(error){
+          console.log('an error has occured ' + error);
+        });
       });
     }
 
