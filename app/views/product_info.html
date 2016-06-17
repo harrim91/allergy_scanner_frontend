@@ -1,4 +1,5 @@
-  <h1 id="product-name"> {{ foodProductCtrl.foodProductInfo.brand }} {{ foodProductCtrl.foodProductInfo.product }}</h1>
-  <ul>
-    <li id="product-"></li>
+  <h1 id="productinfo-brand"> {{ foodProductCtrl.foodProductInfo.brand }}</h1>
+  <h2 id="productinfo-product">{{ foodProductCtrl.foodProductInfo.product }}</h2>
+  <ul class="list" ng-repeat="ingredient in foodProductCtrl.foodProductInfo.ingredients">
+    <li class="item"> {{ingredient}} </li>
   </ul>
