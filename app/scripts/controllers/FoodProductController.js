@@ -1,11 +1,10 @@
 angular.module('happyBellyApp')
-  .controller('FoodProductController', ['FoodProductService', '$state', function(FoodProductService, $state, $cordovaBarcodeScanner){
+  .controller('FoodProductController', ['FoodProductService', '$state', function(FoodProductService, $state, $scope, $cordovaBarcodeScanner){
 
     var self = this;
     var API_URL = 'http://world.openfoodfacts.org/api/v0/product/';
 
     self.getProductInfo = getProductInfo;
-    self.scanBarcode = scanBarcode;
 
     function getProductInfo(barcode) {
       FoodProductService.getProductInfo(API_URL, barcode).then(function(response) {
@@ -14,14 +13,11 @@ angular.module('happyBellyApp')
       _redirectToProductInfo();
     }
 
-    function scanBarcode() {
-      console.log($cordovaBarcodeScanner);
-      document.addEventListener('deviceready', function(){
-        $cordovaBarcodeScanner.scan().then(function(imageData){
-          self.getProductInfo(imageData.format);
-        }, function(error){
-          console.log('an error has occured ' + error);
-        });
+    $scope.scanBarcode = function() {
+      $cordovaBarcodeScanner.scan().then(function(imageData){
+        self.getProductInfo(imageData.text);
+      }, function(error){
+        console.log('an error has occured ' + error);
       });
     }
 
