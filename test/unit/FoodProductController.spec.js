@@ -1,6 +1,6 @@
 describe('FoodProductController', function() {
 
-  var foodProductController;
+  var foodProductController, scope;
   var mockFoodProductService = { getProductInfo: null };
   var foodProduct = {
             brand: 'Thai Kitchen',
@@ -15,14 +15,17 @@ describe('FoodProductController', function() {
     });
   });
 
-  beforeEach(inject(function($controller) {
+  beforeEach(inject(function($controller, $rootScope) {
     spyOn(mockFoodProductService, 'getProductInfo')
       .and.returnValue({
         then: function(resolve) {
           resolve(foodProduct);
         }
     });
-    foodProductController = $controller('FoodProductController');
+    scope = $rootScope.$new();
+    foodProductController = $controller('FoodProductController', {
+      '$scope': scope
+    });
   }));
 
   describe('initialization', function() {
