@@ -1,5 +1,4 @@
-angular.module('happyBellyApp', ['ionic', 'ng-token-auth'])
-
+angular.module('happyBellyApp', ['ionic', 'ng-token-auth', 'ngCordova'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -42,7 +41,7 @@ angular.module('happyBellyApp', ['ionic', 'ng-token-auth'])
   $urlRouterProvider.otherwise('/');
 
   $authProvider.configure({
-      apiUrl: 'http://localhost:3000'
+      apiUrl: 'http://happy-belly-api.herokuapp.com/'
   });
 
 });
