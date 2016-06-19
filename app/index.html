@@ -52,8 +52,7 @@
         <h1 class="title">Happy Belly</h1>
         <a id='sign-up-btn' class='button button-positive button-large' ng-href="#sign_up" ng-hide='userCtrl.currentUser'>Sign up</a>
         <a class='button button-positive button-large' ng-href="#sign_in" ng-hide='userCtrl.currentUser'>Sign in</a>
-        <a class='button button-assertive button-large' ng-click='signOut()' ng-show='userCtrl.currentUser'>Sign out</a>
-        <a class='button' ng-click='userCtrl.userCheck()'>Is there a user?</a>
+        <a class='button button-assertive button-large' ng-click='handleSignOutBtnClick()' ng-show='userCtrl.currentUser'>Sign out</a>
       </ion-header-bar>
       <ion-content ng-controller="FoodProductController as foodProductCtrl">
         <section ui-view></section>

@@ -8,7 +8,7 @@ angular.module('happyBellyApp')
     function getProductInfo(barcode) {
       FoodProductService.getProductInfo(API_URL, barcode).then(function(response) {
         self.foodProductInfo = response;
-      })
+      });
       _redirectToProductInfo();
     }
 
