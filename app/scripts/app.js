@@ -37,6 +37,10 @@ angular.module('happyBellyApp', ['ionic', 'ng-token-auth'])
     .state('product-info', {
       url: '/product-info',
       templateUrl: 'views/product_info.html'
+    })
+    .state('user-profile', {
+      url: '/user-profile',
+      templateUrl: 'views/user_profile.html'
     });
 
   $urlRouterProvider.otherwise('/');
