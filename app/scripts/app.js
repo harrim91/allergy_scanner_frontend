@@ -42,7 +42,10 @@ angular.module('happyBellyApp', ['ionic', 'ng-token-auth'])
   $urlRouterProvider.otherwise('/');
 
   $authProvider.configure({
-      apiUrl: 'http://localhost:3000'
+    apiUrl: 'http://localhost:3000',
+    authProviderPaths: {
+      facebook: '/auth/facebook'
+    },
   });
 
 });
