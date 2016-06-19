@@ -20,17 +20,23 @@ module.exports = function(config) {
       'app/bower_components/angular-mocks/angular-mocks.js',
       'app/bower_components/ng-token-auth/dist/ng-token-auth.js',
       'app/bower_components/angular-cookie/angular-cookie.js',
+      'app/bower_components/ngCordova/dist/ng-cordova.js',
       'app/scripts/**/*.js',
       'www/lib/ionic/js/ionic.bundle.js',
       'node_modules/moment/min/moment.min.js',
       'test/unit/*.js',
       'test/unit'
     ],
+    plugins: [
+      "karma-jasmine",
+      "karma-chrome-launcher"
+    ],
 
 
     // list of files to exclude
     exclude: [
     ],
+
 
 
     // preprocess matching files before serving them to the browser

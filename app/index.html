@@ -32,6 +32,7 @@
     <!-- endbower -->
     <!-- endbuild -->
 
+
     <!-- cordova script (this will be a 404 during development) -->
     <script src="cordova.js"></script>
 
@@ -54,6 +55,7 @@
         <a class='button button-positive button-large' ng-href="#sign_in" ng-hide='userCtrl.currentUser'>Sign in</a>
         <a class='button button-assertive button-large' ng-click='handleSignOutBtnClick()' ng-show='userCtrl.currentUser'>Sign out</a>
       </ion-header-bar>
+
       <ion-content ng-controller="FoodProductController as foodProductCtrl">
         <section ui-view></section>
       </ion-content>
