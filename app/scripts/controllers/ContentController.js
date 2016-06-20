@@ -1,5 +1,6 @@
-function ContentController($scope, $ionicSideMenuDelegate) {
-  $scope.toggleLeft = function() {
+angular.module('happyBellyApp')
+.controller('ContentController', function($scope, $ionicScrollDelegate) {
+$scope.toggleLeft = function() {
     $ionicSideMenuDelegate.toggleLeft();
   };
-}
+});

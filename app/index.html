@@ -47,29 +47,51 @@
   </head>
 
   <body ng-app="happyBellyApp" ng-controller="UserController as userCtrl">
-    <ion-pane>
 
+    <!-- <ion-pane> -->
 
-      <ion-header-bar class="bar-stable">
+    <ion-side-menus>
+      <ion-side-menu-content>
 
+        <ion-header-bar class="bar-stable">
+          <div class="buttons">
+            <button class = "button button-icon icon ion-navicon" menu-toggle="left"></button>
+          </div>
+         <h1 class="title" ng-href="/">Happy Belly</h1>
+          <!-- <a id='sign-up-btn' class='button button-positive button-large' ng-href="#sign_up">Sign up</a>
+          <a class='button button-positive button-large' ng-href="#sign_in">Sign in</a>
+          <a class='button button-assertive button-large' ng-click='signOut()'>Sign out</a> -->
+         </ion-header-bar>
+         <ion-nav-view name="menuContent"></ion-nav-view>
+      </ion-side-menu-content>
 
-        <h1 class="title">Happy Belly</h1>
-        <a id='sign-up-btn' class='button button-positive button-large' ng-href="#sign_up">Sign up</a>
-        <a class='button button-positive button-large' ng-href="#sign_in">Sign in</a>
-        <a class='button button-assertive button-large' ng-click='signOut()'>Sign out</a>
-      </ion-header-bar>
+      <ion-side-menu side="left">
+        <ion-list>
+            <ion-item menu-close href="#sign_up">Sign up</ion-item>
+         </ion-list>
+         <ion-list>
+            <ion-item menu-close href="#sign_in">Sign in</ion-item>
+        </ion-list>
+        <ion-list>
+           <ion-item menu-close ng-click='signOut()'>Sign out</ion-item>
+       </ion-list>
+       <ion-list>
+         <ion-item menu-close href='#user_profile'>My profile</ion-item>
+       </ion-list>
+       </ion-side-menu>
+      </ion-side-menus>
+
       <ion-content ng-controller="FoodProductController as foodProductCtrl">
+        <ion-nav-view></ion-nav-view>
         <section ui-view></section>
       </ion-content>
-
       <!-- if current_user -->
-      <ion-footer-bar align-title="right" class="bar-assertive">
+       <!-- <ion-footer-bar align-title="right" class="bar-assertive">
         <a class="tab-item" ng-href="#user_profile">
         <i class="icon ion-person"></i>
         </div>
-      </ion-footer-bar>
-
-    </ion-pane>
+      </ion-footer-bar> -->
+     </ion-pane>
   </body>
 
 </html>

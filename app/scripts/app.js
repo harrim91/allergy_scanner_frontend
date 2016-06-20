@@ -21,14 +21,29 @@ angular.module('happyBellyApp', ['ionic', 'ng-token-auth'])
 
 .config(function($authProvider, $stateProvider, $urlRouterProvider) {
   $stateProvider
+
+    .state('app', {
+     url: "/app",
+     templateUrl: "views/menu.html",
+     controller: 'UserController'
+    })
     .state('sign_up', {
       url: '/sign_up',
-      templateUrl: 'views/sign_up.html',
-      controller: 'UserController'
+      views: {
+      'menuContent': {
+        templateUrl: 'views/sign_up.html',
+        controller: 'UserController'
+      }
+    }
     })
     .state('sign_in', {
       url: '/sign_in',
-      templateUrl: 'views/sign_in.html'
+      views: {
+      'menuContent': {
+        templateUrl: 'views/sign_in.html',
+        controller: 'UserController'
+      }
+    }
     })
     .state('search', {
       url: '/',
@@ -40,8 +55,13 @@ angular.module('happyBellyApp', ['ionic', 'ng-token-auth'])
     })
     .state('user-profile', {
       url: '/user-profile',
-      templateUrl: 'views/user_profile.html'
-    });
+      views: {
+      'menuContent': {
+        templateUrl: 'views/user_profile.html',
+        controller: 'UserController'
+      }
+    }
+  });
 
   $urlRouterProvider.otherwise('/');
 
