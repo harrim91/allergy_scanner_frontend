@@ -2,14 +2,19 @@
 
   <h1>Default profiles</h1>
 
-  <div ng-repeat="profile in profileCtrl.defaultProfiles">
-    <h3>{{ profile.name }}</h3>
-    <strong>Ingredients:</strong>
-    <ul>
-     <li ng-repeat="ingredient in profile.ingredients">
-        {{ ingredient.name }}
-     </li>
-    </ul>
-  </div>
+  <form>
+    <div ng-repeat="profile in profileCtrl.defaultProfiles">
+      <input type="checkbox" name="name">
+      <span class="profile-name">{{ profile.name }}</span>
+      <br/>
+      <strong>Ingredients:</strong>
+      <ul>
+       <li ng-repeat="ingredient in profile.ingredients">
+          {{ ingredient.name }}
+       </li>
+      </ul>
+    </div>
+    <button type="submit">Save my profiles</button>
+  </form>
 
 </div>
