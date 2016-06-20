@@ -1,0 +1,15 @@
+<div ng-controller="ProfileController as profileCtrl">
+
+  <h1>Default profiles</h1>
+
+  <div ng-repeat="profile in profileCtrl.defaultProfiles">
+    <h3>{{ profile.name }}</h3>
+    <strong>Ingredients:</strong>
+    <ul>
+     <li ng-repeat="ingredient in profile.ingredients">
+        {{ ingredient.name }}
+     </li>
+    </ul>
+  </div>
+
+</div>

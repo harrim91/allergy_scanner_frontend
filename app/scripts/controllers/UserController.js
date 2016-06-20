@@ -9,5 +9,4 @@ angular.module('happyBellyApp')
         console.log(resp);
         });
     };
-
   });
