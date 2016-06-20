@@ -18,7 +18,7 @@ angular.module('happyBellyApp')
       });
     }
 
-    self.cleanFalse = function (object) {
+    self.cleanFalse = function(object) {
       Object.keys(object).filter(function(x) {
         if( object[x] !== false){chosenIngredients.push(object[x]); }
       });
@@ -32,7 +32,7 @@ angular.module('happyBellyApp')
 
     function extractIds() {
       mergedIngredients.map(function(obj) {finalIngredients.push(obj.id);});
-      console.log(finalIngredients);
+      ProfileService.create(finalIngredients);
     }
 
   });
