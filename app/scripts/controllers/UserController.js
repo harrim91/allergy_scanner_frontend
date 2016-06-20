@@ -1,5 +1,5 @@
 angular.module('happyBellyApp')
-  .controller('UserController', function($scope, $auth, $state, $ionicSideMenuDelegate){
+  .controller('UserController', function($scope, $auth, $state){
     $scope.handleRegBtnClick = function() {
       $auth.submitRegistration($scope.registrationForm)
         .then(function(resp) {
@@ -9,9 +9,5 @@ angular.module('happyBellyApp')
         console.log(resp);
         });
     };
-
-    $scope.toggleLeft = function() {
-        $ionicSideMenuDelegate.toggleLeft();
-      };
 
   });
