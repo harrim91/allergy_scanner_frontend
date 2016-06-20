@@ -4,4 +4,4 @@ angular.module('happyBellyApp')
       this.user_id = userId;
       this.ingredients = ingredients;
     };
-}])
+}]);
