@@ -1,17 +1,18 @@
+{{console.log('test')}}
+
 <div ng-controller="ProfileController as profileCtrl">
 
   <h1>Default profiles</h1>
-
-  <form>
-    <div ng-repeat="profile in profileCtrl.defaultProfiles">
-      <strong><input type="checkbox" name="name" class="profile-name"> {{ profile.name }}</input></strong>
-      <ul>
-       <li class="ingredient-name" ng-repeat="ingredient in profile.ingredients">
-          {{ ingredient.name }}
-       </li>
-      </ul>
-    </div>
-    <button type="submit">Save my profiles</button>
-  </form>
-
+  <!-- <form action="user_profile" method="get"> -->
+<form>
+  <div ng-repeat="profile in profileCtrl.defaultProfiles">
+    <input type="checkbox" name="name" class="profile-name" ng-true-value='{{profile.ingredients}}' ng-model='selectedProfiles[profile.name]'> {{ profile.name }}</input>
+    <ul>
+     <li class="ingredient-name" ng-repeat="ingredient in profile.ingredients">
+        {{ ingredient.name }}
+     </li>
+    </ul>
+  </div>
+  <button type="button" ng-click="profileCtrl.cleanFalse(selectedProfiles)">Submit</button>
+</form>
 </div>
