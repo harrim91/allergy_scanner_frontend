@@ -35,9 +35,4 @@ angular.module('happyBellyApp')
       console.log(finalIngredients);
     }
 
-
-
-    self.log = function(obj) {
-      console.log(obj);
-    };
   });
