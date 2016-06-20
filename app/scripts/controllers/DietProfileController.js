@@ -25,7 +25,7 @@ angular.module('happyBellyApp')
 
     function formatIngredients () {
         var mergedIngredients = [].concat.apply([], chosenIngredients);
-        ProfileService.create(mergedIngredients);
+        ProfileService.create(userId, mergedIngredients);
     };
 
 

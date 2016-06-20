@@ -2,8 +2,8 @@ describe('ProfileService', function(){
   beforeEach(module("happyBellyApp"));
 
   var ProfileService, ProfileFactory, httpBackend;
-  var ingredients = [ { id: 1, name: 'Cheese' }, { id: 2, name: 'milk' } ];
 
+  var ingredients = [ { id: 1, name: 'Cheese' }, { id: 2, name: 'milk' } ];
 
 
   beforeEach(inject(function($httpBackend, _ProfileService_, _ProfileFactory_){
