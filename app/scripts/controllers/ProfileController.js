@@ -1,5 +1,5 @@
 angular.module('happyBellyApp')
-  .controller('ProfileController', function($scope, ProfileService, $state){
+  .controller('ProfileController', function(ProfileService){
 
     var self = this;
     var API_URL = 'http://happy-belly-api.herokuapp.com/diet_profiles';

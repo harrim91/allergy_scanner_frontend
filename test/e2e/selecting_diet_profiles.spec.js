@@ -9,4 +9,11 @@ describe ('Diet profiles', function() {
     browser.get('#/diet_profiles');
     expect($('.ingredient-name').getText()).toMatch('Peanut');
   });
+
+  it ("should acknowlegde a saved profile and go to preferences" , function() {
+    browser.get('#/diet_profiles');
+    ($('.profile-name').click());
+    ($('#submit').click());
+    expect($('#page-title').getText()).toMatch("My Profile");
+  });  
 });

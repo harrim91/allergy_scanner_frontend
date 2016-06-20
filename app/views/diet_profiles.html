@@ -4,10 +4,7 @@
 
   <form>
     <div ng-repeat="profile in profileCtrl.defaultProfiles">
-      <input type="checkbox" name="name">
-      <span class="profile-name">{{ profile.name }}</span>
-      <br/>
-      <strong>Ingredients:</strong>
+      <strong><input type="checkbox" name="name" class="profile-name"> {{ profile.name }}</input></strong>
       <ul>
        <li class="ingredient-name" ng-repeat="ingredient in profile.ingredients">
           {{ ingredient.name }}
