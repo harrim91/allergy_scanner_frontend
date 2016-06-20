@@ -53,17 +53,16 @@ angular.module('happyBellyApp', ['ionic', 'ng-token-auth'])
       templateUrl: 'views/search.html'
     })
 
-    .state('product-info', {
-      url: '/product-info',
+    .state('product_info', {
+      url: '/product_info',
       templateUrl: 'views/product_info.html'
     })
-    
-    .state('user-profile', {
-      url: '/user-profile',
+
+    .state('user_profile', {
+      url: '/user_profile',
       views: {
       'menuContent': {
-        templateUrl: 'views/user_profile.html',
-        controller: 'UserController'
+        templateUrl: 'views/user_profile.html'
       }
     }
   });
