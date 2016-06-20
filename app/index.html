@@ -32,6 +32,7 @@
     <!-- endbower -->
     <!-- endbuild -->
 
+
     <!-- cordova script (this will be a 404 during development) -->
     <script src="cordova.js"></script>
 
@@ -50,12 +51,12 @@
     <ion-pane>
       <ion-header-bar class="bar-stable">
         <h1 class="title">Happy Belly</h1>
-        <a id='sign-up-btn' class='button button-positive button-large' ng-href="#sign_up" ng-hide='userCtrl.currentUser'>Sign up</a>
-        <a class='button button-positive button-large' ng-href="#sign_in" ng-hide='userCtrl.currentUser'>Sign in</a>
-        <a class='button button-assertive button-large' ng-click='signOut()' ng-show='userCtrl.currentUser'>Sign out</a>
-        <a class='button button-positive button-large' ng-click="authenticate('facebook')" ng-hide='userCtrl.currentUser'>Facebook login</a>
-        <a class='button' ng-click='userCtrl.userCheck()'>Is there a user?</a>
+        <a id='sign-up-btn' class='button button-positive button-large' ng-href="#sign_up" ng-hide='user.signedIn === true'>Sign up</a>
+        <a class='button button-positive button-large' ng-href="#sign_in" ng-hide='user.signedIn === true'>Sign in</a>
+        <a class='button button-assertive button-large' ng-click='handleSignOutBtnClick()' ng-show='user.signedIn === true'>Sign out</a>
+        <a class='button button-positive button-large' ng-click="authenticate('facebook')" ng-hide='user.signedIn === true'>Facebook login</a>
       </ion-header-bar>
+
       <ion-content ng-controller="FoodProductController as foodProductCtrl">
         <section ui-view></section>
       </ion-content>
