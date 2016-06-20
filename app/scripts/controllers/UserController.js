@@ -1,5 +1,5 @@
 angular.module('happyBellyApp')
-  .controller('UserController', function($scope, $auth, $state){
+  .controller('UserController', function($scope, $auth, $state, $rootScope, $location){
 
     var self = this;
     findUser();
@@ -41,4 +41,19 @@ angular.module('happyBellyApp')
         console.log(resp);
       });
     }
+
+    $rootScope.$on('auth:login-success', function(ev, user) {
+     $scope.user = user;
+     alert('Welcome ', user.email);
+   });
+
+   $scope.$on('devise:new-registration', function (e, user){
+     $scope.user = user;
+   });
+
+   $scope.$on('devise:login', function (e, user){
+     $scope.user = user;
+   });
+
+   console.log($scope.user);
   });
