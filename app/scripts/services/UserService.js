@@ -10,4 +10,4 @@ angular.module('happyBellyApp')
       self.currentUserID = id;
     }
 
-}])
+}]);

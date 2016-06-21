@@ -7,7 +7,7 @@ angular.module('happyBellyApp')
       $auth.submitRegistration($scope.registrationForm)
         .then(function() {
           validateUser();
-          $state.go('search');
+          $state.go('diet_profiles');
         })
         .catch(function(resp) {
         console.log(resp);
