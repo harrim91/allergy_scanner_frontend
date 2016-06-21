@@ -41,6 +41,10 @@ angular.module('happyBellyApp', ['ionic', 'ng-token-auth', 'ngCordova'])
       url: '/diet_profiles',
       templateUrl: 'views/diet_profiles.html',
       controller: 'DietProfileController'
+    })
+    .state('user_profile', {
+      url: '/user_profile',
+      templateUrl: 'views/user_profile.html'
     });
 
   $urlRouterProvider.otherwise('/');
