@@ -20,21 +20,44 @@ angular.module('happyBellyApp', ['ionic', 'ng-token-auth', 'ngCordova'])
 
 .config(function($authProvider, $stateProvider, $urlRouterProvider) {
   $stateProvider
+
+    .state('app', {
+     url: "/app",
+     templateUrl: "views/menu.html",
+     controller: 'UserController'
+    })
+
     .state('sign_up', {
       url: '/sign_up',
-      templateUrl: 'views/sign_up.html',
-      controller: 'UserController'
+      views: {
+      'menuContent': {
+        templateUrl: 'views/sign_up.html',
+        controller: 'UserController'
+        }
+      }
     })
+
     .state('sign_in', {
       url: '/sign_in',
-      templateUrl: 'views/sign_in.html'
+      views: {
+      'menuContent': {
+        templateUrl: 'views/sign_in.html',
+        controller: 'UserController'
+        }
+      }
     })
+
     .state('search', {
       url: '/',
       templateUrl: 'views/search.html'
+      // views: {
+      // 'menuContent': {
+      //   templateUrl: 'views/search.html',
+      //   }
     })
-    .state('product-info', {
-      url: '/product-info',
+
+    .state('product_info', {
+      url: '/product_info',
       templateUrl: 'views/product_info.html'
     })
     .state('diet_profiles', {
@@ -44,8 +67,12 @@ angular.module('happyBellyApp', ['ionic', 'ng-token-auth', 'ngCordova'])
     })
     .state('user_profile', {
       url: '/user_profile',
-      templateUrl: 'views/user_profile.html'
-    });
+      views: {
+      'menuContent': {
+        templateUrl: 'views/user_profile.html'
+      }
+    }
+  });
 
   $urlRouterProvider.otherwise('/');
 

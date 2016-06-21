@@ -1,8 +1,8 @@
 <div class="card">
-  <h1> My Profile:<h1> {{ user.email }} 
-    <div ng-controller="UserController as userCtrl" ng-repeat="ingredient in userCtrl.userIngredients()">
-      <ul>
-        <li>{{ ingredient }}</li>
-      </ul>
-    </div>
+  <h1> My Profile:<h1> {{ user.email }}
+  <div ng-controller="UserController as userCtrl" ng-repeat="ingredient in userCtrl.userIngredients()">
+    <ul>
+      <li>{{ ingredient }}</li>
+    </ul>
+  </div>
 </div>
