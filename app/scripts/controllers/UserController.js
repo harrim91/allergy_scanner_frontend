@@ -2,6 +2,7 @@ angular.module('happyBellyApp')
   .controller('UserController', function(UserService, $scope, $auth, $state, $rootScope){
 
     var self = this;
+    var USER_INGREDIENT_URL = 'http://happy-belly-api.herokuapp.com/user_ingredients';
 
     $scope.handleRegBtnClick = function() {
       $auth.submitRegistration($scope.registrationForm)
@@ -54,5 +55,14 @@ angular.module('happyBellyApp')
     $scope.$on('devise:login', function (e, user){
      $scope.user = user;
     });
+
+    self.userIngredients = getUserIngredients();
+
+    function getUserIngredients() {
+      UserService.getUserIngredients(USER_INGREDIENT_URL).then(function(response) {
+        self.userIngredients = response;
+        console.log(response);
+      });
+    }
 
   });
