@@ -8,8 +8,8 @@ describe('FoodProductService', function(){
 
   var apiResponse = {product:
       {
-        brand: 'Thai Kitchen',
-        product: 'Stir-Fry Rice Noodles',
+        brands: 'Thai Kitchen',
+        product_name: 'Stir-Fry Rice Noodles',
         ingredients: [ { text: 'Rice Noodles' }, { text: 'Seasoning' } ]
       }
     };
@@ -29,10 +29,11 @@ describe('FoodProductService', function(){
                                             ['Rice Noodles', 'Seasoning']
                                             );
     httpBackend.expectGET(apiUrl + barcode + '.json').respond(apiResponse);
+    httpBackend.whenGET(/views.*/).respond(200, '');
 
     FoodProductService.getProductInfo(apiUrl, barcode).then(function(response){
       expect(response).toEqual(foodProduct);
     });
+    httpBackend.flush();
   });
-
 });

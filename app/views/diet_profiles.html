@@ -1,7 +1,7 @@
   <div ng-controller="DietProfileController as profileCtrl">
     <h1>Diet profiles</h1>
       <ion-list>
-      <div ng-repeat="profile in profileCtrl.defaultProfiles">
+      <div ng-repeat="profile in profileCtrl.dietProfiles">
         <div class="card">
           <ion-checkbox type="checkbox" name="name" class="profile-name" ng-true-value='{{profile.ingredients}}' ng-model='selectedProfiles[profile.name]'> {{ profile.name }}</ion-checkbox>
           Ingredients:

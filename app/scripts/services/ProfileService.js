@@ -4,7 +4,7 @@ angular.module('happyBellyApp')
     var self = this;
     var url = 'http://localhost:3000/user_ingredients';
 
-    self.getDefaultProfiles = function(apiUrl) {
+    self.getDietProfiles = function(apiUrl) {
       return _getDatafromApi(apiUrl)
         .then(function(response) {
           return _handleResponse(response.data);
