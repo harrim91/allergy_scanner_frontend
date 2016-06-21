@@ -1,16 +1,17 @@
-<div ng-controller="DietProfileController as profileCtrl">
-
-  <h1>Default profiles</h1>
-  <!-- <form action="user_profile" method="get"> -->
-<form>
-  <div ng-repeat="profile in profileCtrl.defaultProfiles">
-    <input type="checkbox" name="name" class="profile-name" ng-true-value='{{profile.ingredients}}' ng-model='selectedProfiles[profile.name]'> {{ profile.name }}</input>
-    <ul>
-     <li class="ingredient-name" ng-repeat="ingredient in profile.ingredients">
-        {{ ingredient.name }}
-     </li>
-    </ul>
+  <div ng-controller="DietProfileController as profileCtrl">
+    <h1>Diet profiles</h1>
+      <ion-list>
+      <div ng-repeat="profile in profileCtrl.defaultProfiles">
+        <div class="card">
+          <ion-checkbox type="checkbox" name="name" class="profile-name" ng-true-value='{{profile.ingredients}}' ng-model='selectedProfiles[profile.name]'> {{ profile.name }}</ion-checkbox>
+          Ingredients:
+          <ul>
+           <li class="ingredient-name" ng-repeat="ingredient in profile.ingredients">
+              {{ ingredient.name }}
+           </li>
+          </ul>
+        </div>
+      </div>
+      <button class="button button-block button-stable" ng-click="profileCtrl.cleanFalse(selectedProfiles)">Submit</button>
+    </ion-list>
   </div>
-  <button type="button" ng-click="profileCtrl.cleanFalse(selectedProfiles)">Submit</button>
-</form>
-</div>
