@@ -2,13 +2,12 @@ angular.module('happyBellyApp')
   .controller('UserController', function(UserService, $scope, $auth, $state, $rootScope){
 
     var self = this;
-    var USER_INGREDIENT_URL = 'http://happy-belly-api.herokuapp.com/'+ $scope.user.id +'/ingredients';
+    var USER_INGREDIENT_URL = 'http://happy-belly-api.herokuapp.com/users/'+ $scope.user.id +'/ingredients';
 
     $scope.handleRegBtnClick = function() {
       $auth.submitRegistration($scope.registrationForm)
-        .then(function() {
-          validateUser();
-          $state.go('diet_profiles');
+        .then(function(response) {
+          validateUser('diet_profiles');
         })
         .catch(function(resp) {
         console.log(resp);
@@ -18,8 +17,7 @@ angular.module('happyBellyApp')
     $scope.handleLoginBtnClick = function(loginForm) {
       $auth.submitLogin(loginForm)
         .then(function() {
-          validateUser();
-          $state.go('search');
+          validateUser('search');
         })
         .catch(function(resp) {
           console.log(resp);
@@ -30,16 +28,19 @@ angular.module('happyBellyApp')
       //this isn't working properly - setting the CurrentUser to null manually, but it's hacky and I don't like it.
       UserService.setCurrentUserID(null);
       $auth.signOut().then(function() {
-        validateUser();
-        $state.go('sign_in');
+        validateUser('sign_in');
 
       });
     };
 
-    function validateUser() {
+    function validateUser(state) {
       $auth.validateUser().then(function(response) {
         if(response.signedIn) {
           UserService.setCurrentUserID(response.id);
+          $state.go(state);
+        } else {
+          UserService.setCurrentUserID(null);
+          $state.go('sign_in');
         }
       });
     }
@@ -61,7 +62,6 @@ angular.module('happyBellyApp')
     function getUserIngredients() {
       UserService.getUserIngredients(USER_INGREDIENT_URL).then(function(response) {
         self.userIngredients = response;
-        console.log(response);
       });
     }
 

@@ -3,8 +3,9 @@ angular.module('happyBellyApp')
 
     var self = this;
     var DIET_PROFILE_URL = 'http://happy-belly-api.herokuapp.com/diet_profiles';
-    var USER_INGREDIENT_URL = 'http://happy-belly-api.herokuapp.com/'+ UserService.currentUserID +'/ingredients';
+    var USER_INGREDIENT_URL = 'http://happy-belly-api.herokuapp.com/users/'+ UserService.currentUserID +'/ingredients';
 
+    console.log(UserService.currentUserID);
     var chosenIngredients = [];
 
     self.dietProfiles = getDietProfiles();
