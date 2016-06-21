@@ -18,16 +18,16 @@ angular.module('happyBellyApp')
       return response;
     }
 
-    self.create = function(apiUrl, userId, ingredients){
-      var dietProfile = _newDietProfile(userId, ingredients);
+    self.create = function(apiUrl, ingredients){
+      var dietProfile = _newDietProfile(ingredients);
       return _sendObject(apiUrl, dietProfile)
       .then(function(response){
         console.log(response);
       });
     };
 
-    function _newDietProfile(userId, ingredients){
-      return new DietProfileFactory(userId, ingredients);
+    function _newDietProfile(ingredients){
+      return new DietProfileFactory(ingredients);
     }
 
     function _sendObject(url, object){
