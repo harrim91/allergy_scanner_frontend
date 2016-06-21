@@ -1,9 +1,9 @@
-describe('ProfileFactory', function() {
+describe('DietProfileFactory', function() {
   beforeEach(module('happyBellyApp'));
 
-  var ProfileFactory, foodProduct, brand, products, ingredients;
-  beforeEach(inject(function(_ProfileFactory_){
-    ProfileFactory = _ProfileFactory_;
+  var DietProfileFactory, foodProduct, brand, products, ingredients;
+  beforeEach(inject(function(_DietProfileFactory_){
+    DietProfileFactory = _DietProfileFactory_;
   }));
 
   describe('::new', function() {
@@ -13,12 +13,12 @@ describe('ProfileFactory', function() {
     });
 
     it('should create a diet profile with a user id', function() {
-      dietProfile = new ProfileFactory(userId, ingredients);
+      dietProfile = new DietProfileFactory(userId, ingredients);
       expect(dietProfile.user_id).toEqual(userId);
     });
 
     it('should create a diet profile with ingredients', function() {
-      foodProduct = new ProfileFactory(userId, ingredients);
+      foodProduct = new DietProfileFactory(userId, ingredients);
       expect(foodProduct.ingredients).toEqual(ingredients);
     });
   });

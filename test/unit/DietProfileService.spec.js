@@ -1,7 +1,7 @@
-describe('ProfileService', function(){
+describe('DietProfileService', function(){
   beforeEach(module("happyBellyApp"));
 
-  var ProfileService, ProfileFactory, httpBackend;
+  var DietProfileService, DietProfileFactory, httpBackend;
 
   var apiUrl = 'http://www.test.com/';
   var ingredients = [ { id: 1, name: 'Cheese' }, { id: 2, name: 'milk' } ];
@@ -15,17 +15,17 @@ describe('ProfileService', function(){
   ];
 
 
-  beforeEach(inject(function($httpBackend, _ProfileService_, _ProfileFactory_){
+  beforeEach(inject(function($httpBackend, _DietProfileService_, _DietProfileFactory_){
     httpBackend = $httpBackend;
-    ProfileService = _ProfileService_;
-    ProfileFactory = _ProfileFactory_;
+    DietProfileService = _DietProfileService_;
+    DietProfileFactory = _DietProfileFactory_;
   }));
 
   it('receives diet profile information from the API', function(){
-    var dietProfile = new ProfileFactory(1, ['Rice Noodles', 'Seasoning']);
+    var dietProfile = new DietProfileFactory(1, ['Rice Noodles', 'Seasoning']);
     httpBackend.expectGET(apiUrl).respond(apiResponse);
     httpBackend.whenGET(/views.*/).respond(200, '');
-    ProfileService.getDietProfiles(apiUrl)
+    DietProfileService.getDietProfiles(apiUrl)
       .then(function(response){
         expect(response).toEqual(apiResponse);
 
@@ -34,9 +34,12 @@ describe('ProfileService', function(){
   });
 
   it('sends diet profile information to the API', function(){
-    ProfileService.create(1, ingredients).then(function(){
-      expect(httpBackend.post).toHaveBeenCalled();
+    httpBackend.expectPOST(apiUrl).respond('success');
+    httpBackend.whenGET(/views.*/).respond(200, '');
+    DietProfileService.create(apiUrl, 1, ingredients).then(function(response){
+      expect(response).toEqual('success');
     });
+    httpBackend.flush();
   });
 
 });

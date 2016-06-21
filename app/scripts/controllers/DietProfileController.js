@@ -1,26 +1,21 @@
 angular.module('happyBellyApp')
-  .controller('DietProfileController', function(ProfileService, $scope, $auth){
+  .controller('DietProfileController', function(UserService, DietProfileService, $scope){
 
     var self = this;
-    var API_URL = 'http://happy-belly-api.herokuapp.com/diet_profiles';
+    var DIET_PROFILE_URL = 'http://happy-belly-api.herokuapp.com/diet_profiles';
+    var USER_INGREDIENT_URL = 'http://happy-belly-api.herokuapp.com/user_ingredients';
+
+    console.log(UserService.currentUserID);
 
     var chosenIngredients = [];
 
-    self.defaultProfiles = getDefaultProfiles();
+    self.dietProfiles = getDietProfiles();
 
     $scope.selectedProfiles = {};
 
-    function currentUser() {
-      $auth.validateUser().then(function(response) {
-        return response.id;
-      });
-    }
-
-    currentUser();
-
-    function getDefaultProfiles() {
-      ProfileService.getDefaultProfiles(API_URL).then(function(response) {
-        self.defaultProfiles = response;
+    function getDietProfiles() {
+      DietProfileService.getDietProfiles(DIET_PROFILE_URL).then(function(response) {
+        self.dietProfiles = response;
       });
     }
 
@@ -33,7 +28,7 @@ angular.module('happyBellyApp')
 
     function formatIngredients () {
         var mergedIngredients = [].concat.apply([], chosenIngredients);
-        ProfileService.create(currentUser(), mergedIngredients);
+        DietProfileService.create(USER_INGREDIENT_URL, UserService.currentUserID, mergedIngredients);
     };
 
 
