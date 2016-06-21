@@ -8,17 +8,12 @@ describe('DietProfileFactory', function() {
 
   describe('::new', function() {
     beforeEach(function() {
-      userId = 1;
       ingredients = ['Rice Noodles', 'Seasoning'];
     });
 
-    it('should create a diet profile with a user id', function() {
-      dietProfile = new DietProfileFactory(userId, ingredients);
-      expect(dietProfile.user_id).toEqual(userId);
-    });
 
     it('should create a diet profile with ingredients', function() {
-      foodProduct = new DietProfileFactory(userId, ingredients);
+      foodProduct = new DietProfileFactory(ingredients);
       expect(foodProduct.ingredients).toEqual(ingredients);
     });
   });

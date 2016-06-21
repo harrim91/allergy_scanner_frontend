@@ -3,7 +3,7 @@ angular.module('happyBellyApp')
 
     var self = this;
     var DIET_PROFILE_URL = 'http://happy-belly-api.herokuapp.com/diet_profiles';
-    var USER_INGREDIENT_URL = 'http://happy-belly-api.herokuapp.com/user_ingredients';
+    var USER_INGREDIENT_URL = 'http://happy-belly-api.herokuapp.com/'+ UserService.currentUserID +'/ingredients';
 
     var chosenIngredients = [];
 
@@ -26,7 +26,7 @@ angular.module('happyBellyApp')
 
     function formatIngredients () {
         var mergedIngredients = [].concat.apply([], chosenIngredients);
-        DietProfileService.create(USER_INGREDIENT_URL, UserService.currentUserID, mergedIngredients).then(function(){
+        DietProfileService.create(USER_INGREDIENT_URL, mergedIngredients).then(function(){
           $state.go('search');
         });
     };

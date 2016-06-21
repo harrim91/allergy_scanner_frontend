@@ -2,7 +2,7 @@ angular.module('happyBellyApp')
   .controller('UserController', function(UserService, $scope, $auth, $state, $rootScope){
 
     var self = this;
-    var USER_INGREDIENT_URL = 'http://happy-belly-api.herokuapp.com/user_ingredients';
+    var USER_INGREDIENT_URL = 'http://happy-belly-api.herokuapp.com/'+ $scope.user.id +'/ingredients';
 
     $scope.handleRegBtnClick = function() {
       $auth.submitRegistration($scope.registrationForm)
@@ -64,5 +64,13 @@ angular.module('happyBellyApp')
         console.log(response);
       });
     }
+
+    self.formatIngredients = function(ingredients) {
+      return ingredients.map(function(x){
+        return x.replace(/\w\S*/g, function(txt) {
+          return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+        });
+      });
+    };
 
   });
