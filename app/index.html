@@ -57,10 +57,8 @@
           <div class="buttons">
             <button class = "button button-icon icon ion-navicon" menu-toggle="left"></button>
           </div>
-         <h1 class="title" ng-href="/#/">Happy Belly</h1>
-          <!-- <a id='sign-up-btn' class='button button-positive button-large' ng-href="#sign_up">Sign up</a>
-          <a class='button button-positive button-large' ng-href="#sign_in">Sign in</a>
-          <a class='button button-assertive button-large' ng-click='signOut()'>Sign out</a> -->
+         <h1 class="title" ng-href="/" text-align="center">Happy Belly</h1>
+         <button class="button button-icon icon ion-search" href="#sign_in"></button>
          </ion-header-bar>
          <ion-nav-view name="menuContent"></ion-nav-view>
       </ion-side-menu-content>
@@ -82,16 +80,9 @@
       </ion-side-menus>
 
       <ion-content ng-controller="FoodProductController as foodProductCtrl">
-        <ion-nav-view></ion-nav-view>
+        <ion-nav-view></ion-nav-vihapyew>
         <section ui-view></section>
       </ion-content>
-      <!-- if current_user -->
-       <!-- <ion-footer-bar align-title="right" class="bar-assertive">
-        <a class="tab-item" ng-href="#user_profile">
-        <i class="icon ion-person"></i>
-        </div>
-      </ion-footer-bar> -->
-     </ion-pane>
   </body>
 
 </html>
