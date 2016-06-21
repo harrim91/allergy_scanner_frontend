@@ -8,23 +8,17 @@ describe('ProfileFactory', function() {
 
   describe('::new', function() {
     beforeEach(function() {
-      brand = 'Thai Kitchen';
-      product = 'Stir-Fry Rice Noodles';
+      userId = 1;
       ingredients = ['Rice Noodles', 'Seasoning'];
     });
 
-    it('should create a food product with a brand', function() {
-      foodProduct = new ProfileFactory(brand, product, ingredients);
-      expect(foodProduct.brand).toEqual(brand);
+    it('should create a diet profile with a user id', function() {
+      dietProfile = new ProfileFactory(userId, ingredients);
+      expect(dietProfile.user_id).toEqual(userId);
     });
 
-    it('should create a food product with a product name', function() {
-      foodProduct = new ProfileFactory(brand, product, ingredients);
-      expect(foodProduct.product).toEqual(product);
-    });
-
-    it('should create a food product with a list of ingredients', function() {
-      foodProduct = new ProfileFactory(brand, product, ingredients);
+    it('should create a diet profile with ingredients', function() {
+      foodProduct = new ProfileFactory(userId, ingredients);
       expect(foodProduct.ingredients).toEqual(ingredients);
     });
   });
