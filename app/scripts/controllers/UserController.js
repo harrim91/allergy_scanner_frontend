@@ -35,8 +35,6 @@ angular.module('happyBellyApp')
 
     function validateUser(state) {
       $auth.validateUser().then(function(response) {
-        console.log(response.signedIn);
-        console.log(response.id);
         if(response.signedIn) {
           UserService.setCurrentUserID(response.id);
           $state.go(state);
@@ -44,7 +42,6 @@ angular.module('happyBellyApp')
           UserService.setCurrentUserID(null);
           $state.go('sign_in');
         }
-        console.log(UserService.currentUserID);
       });
     }
 
@@ -65,7 +62,6 @@ angular.module('happyBellyApp')
     function getUserIngredients() {
       UserService.getUserIngredients(USER_INGREDIENT_URL).then(function(response) {
         self.userIngredients = response;
-        console.log(response);
       });
     }
 
