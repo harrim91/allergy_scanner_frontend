@@ -12,4 +12,14 @@ describe('#sign_up', function(){
   });
 });
 
+describe('#user_profile', function() {
+  it('shows the user\'s email address', function() {
+
+  });
+
+  it('lists the user\'s avoided ingredients', function() {
+
+  });
+});
+
 });
