@@ -1,8 +1,9 @@
-# Allergy Scanner
+# Happy Belly App
 
 Makers Academy Final Project
 ----------------------------
 The app is designed to help people with food allergies or dietary requirements quickly know whether they can eat a certain food.
+It also has a (rails backend)[https://github.com/harrim91/allergy_scanner_backend].
 
 User Stories
 ------------
