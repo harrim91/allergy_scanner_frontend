@@ -49,6 +49,7 @@
     <script src="scripts/controllers/DietProfileController.js"></script>
     <script src="scripts/services/DietProfileService.js"></script>
     <script src="scripts/factories/DietProfileFactory.js"></script>
+    <script src="scripts/controllers/SearchController.js"></script>
     <!-- endbuild -->
   </head>
 
@@ -62,7 +63,7 @@
         <a class='button button-positive button-large' ng-href="#search" ng-show='user.signedIn === true'>Search</a>
       </ion-header-bar>
 
-      <ion-content ng-controller="FoodProductController as foodProductCtrl">
+      <ion-content>
         <section ui-view></section>
       </ion-content>
     </ion-pane>

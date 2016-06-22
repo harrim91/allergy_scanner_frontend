@@ -1,6 +1,8 @@
-Product Details:
+<div ng-controller="FoodProductController as foodProductCtrl">
+  Product Details:
   <h1 id="productinfo-brand"> {{ foodProductCtrl.foodProductInfo.brand }}</h1>
   <h2 id="productinfo-product">{{ foodProductCtrl.foodProductInfo.product }}</h2>
   <ul class="list" ng-repeat="ingredient in foodProductCtrl.foodProductInfo.ingredients">
     <li class="item"> {{ingredient}} </li>
   </ul>
+</div>

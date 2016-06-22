@@ -31,7 +31,8 @@ angular.module('happyBellyApp', ['ionic', 'ng-token-auth', 'ngCordova'])
     })
     .state('search', {
       url: '/',
-      templateUrl: 'views/search.html'
+      templateUrl: 'views/search.html',
+      controller: 'SearchController'
     })
     .state('product-info', {
       url: '/product-info',
