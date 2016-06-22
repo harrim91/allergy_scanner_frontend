@@ -80,10 +80,7 @@ angular.module('happyBellyApp', ['ionic', 'ng-token-auth', 'ngCordova'])
   $urlRouterProvider.otherwise('/');
 
   $authProvider.configure({
-    apiUrl: 'http://happy-belly-api.herokuapp.com/',
-    authProviderPaths: {
-      facebook: '/auth/facebook'
-    }
+    apiUrl: 'http://happy-belly-api.herokuapp.com/'
   });
 
 });
