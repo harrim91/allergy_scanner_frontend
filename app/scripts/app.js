@@ -20,42 +20,82 @@ angular.module('happyBellyApp', ['ionic', 'ng-token-auth', 'ngCordova'])
 
 .config(function($authProvider, $stateProvider, $urlRouterProvider) {
   $stateProvider
+
+  .state('home', {
+    url: '/',
+    views: {
+    'menuContent': {
+      templateUrl: 'views/home.html',
+      controller: 'UserSessionController'
+      }
+    }
+  })
+
     .state('sign_up', {
       url: '/sign_up',
-      templateUrl: 'views/sign_up.html',
-      controller: 'UserSessionController'
+      views: {
+      'menuContent': {
+        templateUrl: 'views/sign_up.html',
+        controller: 'UserSessionController'
+        }
+      }
     })
+
     .state('sign_in', {
       url: '/sign_in',
-      templateUrl: 'views/sign_in.html'
+      views: {
+      'menuContent': {
+        templateUrl: 'views/sign_in.html',
+        controller: 'UserSessionController'
+        }
+      }
     })
+
     .state('search', {
-      url: '/',
-      templateUrl: 'views/search.html',
-      controller: 'SearchController'
+      url: '/search',
+      views: {
+      'menuContent': {
+        templateUrl: 'views/search.html',
+        controller: 'SearchController'
+        }
+      }
     })
-    .state('product-info', {
-      url: '/product-info',
-      templateUrl: 'views/product_info.html'
+
+    .state('product_info', {
+      url: '/product_info',
+      views: {
+      'menuContent': {
+        templateUrl: 'views/product_info.html',
+        controller: 'FoodProductController'
+        }
+      }
     })
+
     .state('diet_profiles', {
       url: '/diet_profiles',
-      templateUrl: 'views/diet_profiles.html',
-      controller: 'DietProfileController'
+      views: {
+      'menuContent': {
+        templateUrl: 'views/diet_profiles.html',
+        controller: 'DietProfileController'
+        }
+      }
     })
+
     .state('user_profile', {
       url: '/user_profile',
-      templateUrl: 'views/user_profile.html',
-      controller: 'UserProfileController'
-    });
+      views: {
+      'menuContent': {
+        templateUrl: 'views/user_profile.html'
+        // controller: 'UserProfileController'
+      }
+    }
+  });
+
 
   $urlRouterProvider.otherwise('/');
 
   $authProvider.configure({
-    apiUrl: 'http://happy-belly-api.herokuapp.com/',
-    authProviderPaths: {
-      facebook: '/auth/facebook'
-    }
+    apiUrl: 'http://happy-belly-api.herokuapp.com/'
   });
 
 });

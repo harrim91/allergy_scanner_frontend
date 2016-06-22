@@ -4,26 +4,22 @@ angular.module('happyBellyApp')
     var self = this;
     var API_URL = 'http://world.openfoodfacts.org/api/v0/product/';
 
-    self.getProductInfo = getProductInfo;
-
-    function getProductInfo(barcode) {
+    $scope.getProductInfo = function(barcode) {
       FoodProductService.getProductInfo(API_URL, barcode).then(function() {
         _redirectToProductInfo();
       });
     }
 
-
     $scope.scanBarcode = function(){
       $cordovaBarcodeScanner.scan().then(function(imageData){
-      self.getProductInfo(imageData.text);
-
-    }, function(error){
-     alert('an error has occured ' + error);
-   });
- };
+        self.getProductInfo(imageData.text);
+      }, function(error){
+        alert('an error has occured ' + error);
+      });
+    };
 
     function _redirectToProductInfo() {
-      $state.go('product-info');
+      $state.go('product_info');
     }
 
   });

@@ -50,24 +50,48 @@
     <script src="scripts/services/DietProfileService.js"></script>
     <script src="scripts/factories/DietProfileFactory.js"></script>
     <script src="scripts/controllers/SearchController.js"></script>
+
     <!-- endbuild -->
   </head>
 
   <body ng-app="happyBellyApp" ng-controller="UserSessionController as userSessionCtrl">
-    <ion-pane>
+
+  <ion-side-menus enable-menu-with-back-views="true">
+    <ion-side-menu-content>
+
       <ion-header-bar class="bar-stable">
-        <h1 class="title">Happy Belly</h1>
-        <a id='sign-up-btn' class='button button-positive button-large' ng-href="#sign_up" ng-hide='user.signedIn === true'>Sign up</a>
-        <a class='button button-positive button-large' ng-href="#sign_in" ng-hide='user.signedIn === true'>Sign in</a>
-        <a class='button button-assertive button-large' ng-click='handleSignOutBtnClick()' ng-show='user.signedIn === true'>Sign out</a>
-        <a class='button button-positive button-large' ng-href="#search" ng-show='user.signedIn === true'>Search</a>
-        <a class='button button-positive button-large' ng-href="#user_profile" ng-show='user.signedIn === true'>Profile</a>
+        <div class="buttons">
+          <button class = "button button-icon icon ion-navicon" menu-toggle="left"></button>
+        </div>
+        <h1 class="title" ng-href="/" text-align="center">Happy Belly</h1>
+        <a class="button button-icon icon ion-search" href="#search" ng-show='user.signedIn === true'></a>
       </ion-header-bar>
 
+    <ion-nav-view name="menuContent"></ion-nav-view>
+
+    </ion-side-menu-content>
+
+    <ion-side-menu side="left">
+      <ion-list>
+          <ion-item menu-close href="#sign_up" ng-hide='user.signedIn === true'>Sign up</ion-item>
+       </ion-list>
+       <ion-list>
+          <ion-item menu-close href="#sign_in" ng-hide='user.signedIn === true'>Sign in</ion-item>
+      </ion-list>
+      <ion-list>
+         <ion-item menu-close ng-click='handleSignOutBtnClick()' ng-show='user.signedIn === true'>Sign out</ion-item>
+     </ion-list>
+     <ion-list>
+       <ion-item menu-close href="#user_profile" ng-show='user.signedIn === true'>My profile</ion-item>
+     </ion-list>
+    </ion-side-menu>
+
+  </ion-side-menus>
+
       <ion-content>
+
         <section ui-view></section>
       </ion-content>
-    </ion-pane>
   </body>
 
 </html>

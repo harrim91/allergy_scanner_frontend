@@ -2,7 +2,7 @@ angular.module('happyBellyApp')
   .controller('FoodProductController', function($scope, FoodProductService, UserProfileService, $state, $cordovaBarcodeScanner){
 
     var self = this;
-    self.compareIngredients = compareIngredients
+    self.compareIngredients = compareIngredients;
     self.foodProductInfo = FoodProductService.foodProductInfo;
 
     function compareIngredients(user, product) {
@@ -12,7 +12,6 @@ angular.module('happyBellyApp')
               result.push(user[ingredient]);
           }
       }
-      console.log(result);
       return result.length === 0;
     }
 

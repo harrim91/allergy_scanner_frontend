@@ -1,14 +1,18 @@
-<div ng-controller="SearchController as searchCtrl">
-<form ng-submit="searchCtrl.getProductInfo(barcode)" role="form">
+<ion-view>
+  <div class="card">
+    <div ng-controller="SearchController as searchCtrl">
+    <form ng-submit="getProductInfo(barcode)" role="form">
 
-  <label class="item item-input">
-    <i class="icon ion-search placeholder-icon"></i>
-    <input ng-model="barcode" id="barcode-input" type="search" required="required" placeholder="Enter barcode">
-  </label>
+      <label class="item item-input">
+        <i class="icon ion-search placeholder-icon"></i>
+        <input ng-model="barcode" id="barcode-input" type="search" required="required" placeholder="Enter barcode">
+      </label>
 
-  <button type="submit" id="barcode-submit" class="button button-block button-stable">Search Barcode</button>
+      <button type="submit" id="barcode-submit" class="button button-block button-stable">Search Barcode</button>
 
-</form>
+    </form>
 
- <button id='scan-button' ng-click="scanBarcode()" class="button icon ion-camera"> Scan Barcode</button>
-</div>
+     <button id='scan-button' ng-click="scanBarcode()" class="button icon ion-camera"> Scan Barcode</button>
+    </div>
+  </div>
+</ion-view>
