@@ -3,8 +3,8 @@ angular.module('happyBellyApp')
 
     var self = this;
 
-  
     self.setCurrentUserID = setCurrentUserID;
+    self.currentUserID = null;
 
     function setCurrentUserID(id) {
       self.currentUserID = id;

@@ -19,9 +19,9 @@ angular.module('happyBellyApp')
     }
 
     self.formatIngredients = function(ingredients) {
-      return ingredients.map(function(x){
-        return x.replace(/\w\S*/g, function(txt) {
-          return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+      return ingredients.map(function(ingredient){
+        return ingredient.replace(/\w\S*/g, function(word) {
+          return word.charAt(0).toUpperCase() + word.substr(1).toLowerCase();
         });
       });
     };
