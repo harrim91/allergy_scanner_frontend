@@ -72,7 +72,8 @@ angular.module('happyBellyApp', ['ionic', 'ng-token-auth', 'ngCordova'])
       url: '/user_profile',
       views: {
       'menuContent': {
-        templateUrl: 'views/user_profile.html'
+        templateUrl: 'views/user_profile.html',
+        controller: 'UserController'
       }
     }
   });
