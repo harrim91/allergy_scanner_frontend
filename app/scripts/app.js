@@ -73,6 +73,7 @@ angular.module('happyBellyApp', ['ionic', 'ng-token-auth', 'ngCordova'])
     }
   });
 
+
   $urlRouterProvider.otherwise('/');
 
   $authProvider.configure({

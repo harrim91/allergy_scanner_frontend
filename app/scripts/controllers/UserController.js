@@ -2,7 +2,7 @@ angular.module('happyBellyApp')
   .controller('UserController', function(UserService, $scope, $auth, $state, $rootScope){
 
     var self = this;
-    var USER_INGREDIENT_URL = 'http://happy-belly-api.herokuapp.com/users/'+ $scope.user.id +'/ingredients';
+    var USER_INGREDIENT_URL = 'http://happy-belly-api.herokuapp.com/users/'+ $rootScope.user.id +'/ingredients';
 
     $scope.handleRegBtnClick = function() {
       console.log(1);
@@ -46,31 +46,15 @@ angular.module('happyBellyApp')
     }
 
     $rootScope.$on('auth:login-success', function(ev, user) {
-      $scope.user = user;
+      $rootScope.user = user;
     });
 
-    $scope.$on('devise:new-registration', function (e, user){
-     $scope.user = user;
+    $rootScope.$on('devise:new-registration', function (e, user){
+     $rootScope.user = user;
     });
 
-    $scope.$on('devise:login', function (e, user){
-     $scope.user = user;
+    $rootScope.$on('devise:login', function (e, user){
+     $rootScope.user = user;
     });
-
-    self.userIngredients = getUserIngredients();
-
-    function getUserIngredients() {
-      UserService.getUserIngredients(USER_INGREDIENT_URL).then(function(response) {
-        self.userIngredients = response;
-      });
-    }
-
-    self.formatIngredients = function(ingredients) {
-      return ingredients.map(function(x){
-        return x.replace(/\w\S*/g, function(txt) {
-          return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
-        });
-      });
-    };
 
   });
