@@ -61,7 +61,7 @@
             <button class = "button button-icon icon ion-navicon" menu-toggle="left"></button>
           </div>
          <h1 class="title" ng-href="/" text-align="center">Happy Belly</h1>
-         <button class="button button-icon icon ion-search" href="#sign_in"></button>
+         <button class="button button-icon icon ion-search" href="#sign_in" ng-show='user.signedIn === true'></button>
          </ion-header-bar>
          <ion-nav-view name="menuContent"></ion-nav-view>
       </ion-side-menu-content>
