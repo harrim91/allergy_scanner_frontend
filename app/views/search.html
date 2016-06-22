@@ -1,4 +1,5 @@
-<form ng-submit="foodProductCtrl.getProductInfo(barcode)" role="form">
+<div ng-controller="SearchController as searchCtrl">
+<form ng-submit="searchCtrl.getProductInfo(barcode)" role="form">
 
   <label class="item item-input">
     <i class="icon ion-search placeholder-icon"></i>
@@ -10,3 +11,4 @@
 </form>
 
  <button id='scan-button' ng-click="scanBarcode()" class="button icon ion-camera"> Scan Barcode</button>
+</div>
