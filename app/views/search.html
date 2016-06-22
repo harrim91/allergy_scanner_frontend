@@ -1,13 +1,11 @@
+<div class="card">
 <ion-view>
 <form ng-submit="foodProductCtrl.getProductInfo(barcode)" role="form">
   <label class="item item-input">
     <i class="icon ion-search placeholder-icon"></i>
     <input ng-model="barcode" id="barcode-input" type="search" required="required" placeholder="Enter barcode">
   </label>
-
-
   <button type="submit" id="barcode-submit" class="button button-block button-stable">Search Barcode</button>
-
 </form>
-
  <button id='scan-button' ng-click="scanBarcode()" class="button icon ion-camera"> Scan Barcode</button>
+</div>

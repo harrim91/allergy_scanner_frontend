@@ -1,6 +1,6 @@
 <div class="card">
   <div class="item item-text-wrap">
-    <form ng-submit="submitLogin(loginForm)" role="form" ng-init="loginForm = {}">
+    <form ng-submit="handleLoginBtnClick(loginForm)" role="form" ng-init="loginForm = {}">
 
       <label class="item item-input">
         <input placeholder="Email" type="email" name="email" ng-model="loginForm.email" required="required" class="form-control"/>
@@ -10,9 +10,8 @@
         <input placeholder="Password" type="password" name="password" ng-model="loginForm.password" required="required" class="form-control"/>
       </label>
 
-      <button type="submit" class="button button-block button-stable">Sign in</button>
+      <button type="submit" class="button button-block button-stable" href="#search">Sign in</button>
 
     </form>
   </div>
 </div>
-

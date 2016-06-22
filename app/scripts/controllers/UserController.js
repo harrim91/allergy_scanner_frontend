@@ -5,6 +5,7 @@ angular.module('happyBellyApp')
     var USER_INGREDIENT_URL = 'http://happy-belly-api.herokuapp.com/users/'+ $scope.user.id +'/ingredients';
 
     $scope.handleRegBtnClick = function() {
+      console.log(1);
       $auth.submitRegistration($scope.registrationForm)
         .then(function(response) {
           validateUser('diet_profiles');
@@ -28,8 +29,7 @@ angular.module('happyBellyApp')
       //this isn't working properly - setting the CurrentUser to null manually, but it's hacky and I don't like it.
       UserService.setCurrentUserID(null);
       $auth.signOut().then(function() {
-        validateUser('sign_in');
-
+        validateUser('/');
       });
     };
 

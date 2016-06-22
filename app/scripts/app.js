@@ -21,12 +21,6 @@ angular.module('happyBellyApp', ['ionic', 'ng-token-auth', 'ngCordova'])
 .config(function($authProvider, $stateProvider, $urlRouterProvider) {
   $stateProvider
 
-    .state('app', {
-     url: "/app",
-     templateUrl: "views/menu.html",
-     controller: 'UserController'
-    })
-
     .state('sign_up', {
       url: '/sign_up',
       views: {
