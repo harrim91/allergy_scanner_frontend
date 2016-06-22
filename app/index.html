@@ -53,7 +53,7 @@
 
   <body ng-app="happyBellyApp" ng-controller="UserController as userCtrl">
 
-  <ion-side-menus>
+  <ion-side-menus enable-menu-with-back-views="true">
     <ion-side-menu-content>
 
       <ion-header-bar class="bar-stable">
@@ -61,7 +61,7 @@
           <button class = "button button-icon icon ion-navicon" menu-toggle="left"></button>
         </div>
         <h1 class="title" ng-href="/" text-align="center">Happy Belly</h1>
-        <button class="button button-icon icon ion-search" href="#search" ng-show='user.signedIn === true'></button>
+        <a class="button button-icon icon ion-search" href="#search" ng-show='user.signedIn === true'></a>
       </ion-header-bar>
 
     <ion-nav-view name="menuContent"></ion-nav-view>
