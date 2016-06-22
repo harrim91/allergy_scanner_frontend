@@ -48,23 +48,26 @@ angular.module('happyBellyApp', ['ionic', 'ng-token-auth', 'ngCordova'])
     })
 
     .state('search', {
-      url: '/',
-      templateUrl: 'views/search.html'
-      // views: {
-      // 'menuContent': {
-      //   templateUrl: 'views/search.html',
-      //   }
+      url: '/search',
+      views: {
+      'menuContent': {
+        templateUrl: 'views/search.html',
+        controller: 'FoodProductController'
+        }
+      }
     })
 
     .state('product_info', {
       url: '/product_info',
       templateUrl: 'views/product_info.html'
     })
+
     .state('diet_profiles', {
       url: '/diet_profiles',
       templateUrl: 'views/diet_profiles.html',
       controller: 'DietProfileController'
     })
+
     .state('user_profile', {
       url: '/user_profile',
       views: {
@@ -75,12 +78,5 @@ angular.module('happyBellyApp', ['ionic', 'ng-token-auth', 'ngCordova'])
   });
 
   $urlRouterProvider.otherwise('/');
-
-  $authProvider.configure({
-    apiUrl: 'http://happy-belly-api.herokuapp.com/',
-    authProviderPaths: {
-      facebook: '/auth/facebook'
-    }
-  });
 
 });

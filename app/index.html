@@ -53,37 +53,39 @@
 
   <body ng-app="happyBellyApp" ng-controller="UserController as userCtrl">
 
-    <ion-side-menus>
-      <ion-side-menu-content>
+  <ion-side-menus>
+    <ion-side-menu-content>
 
-        <ion-header-bar class="bar-stable">
-          <div class="buttons">
-            <button class = "button button-icon icon ion-navicon" menu-toggle="left"></button>
-          </div>
-         <h1 class="title" ng-href="/" text-align="center">Happy Belly</h1>
-         <button class="button button-icon icon ion-search" href="#sign_in" ng-show='user.signedIn === true'></button>
-         </ion-header-bar>
-         <ion-nav-view name="menuContent"></ion-nav-view>
-      </ion-side-menu-content>
+      <ion-header-bar class="bar-stable">
+        <div class="buttons">
+          <button class = "button button-icon icon ion-navicon" menu-toggle="left"></button>
+        </div>
+        <h1 class="title" ng-href="/" text-align="center">Happy Belly</h1>
+        <button class="button button-icon icon ion-search" href="#search" ng-show='user.signedIn === true'></button>
+      </ion-header-bar>
 
-      <ion-side-menu side="left">
-        <ion-list>
-            <ion-item menu-close href="#sign_up" ng-hide='user.signedIn === true'>Sign up</ion-item>
-         </ion-list>
-         <ion-list>
-            <ion-item menu-close href="#sign_in" ng-hide='user.signedIn === true'>Sign in</ion-item>
-        </ion-list>
-        <ion-list>
-           <ion-item menu-close ng-click='handleSignOutBtnClick()' ng-show='user.signedIn === true'>Sign out</ion-item>
+    <ion-nav-view name="menuContent"></ion-nav-view>
+
+    </ion-side-menu-content>
+
+    <ion-side-menu side="left">
+      <ion-list>
+          <ion-item menu-close href="#sign_up" ng-hide='user.signedIn === true'>Sign up</ion-item>
        </ion-list>
        <ion-list>
-         <ion-item menu-close href="#user_profile">My profile</ion-item>
-       </ion-list>
-       </ion-side-menu>
-      </ion-side-menus>
+          <ion-item menu-close href="#sign_in" ng-hide='user.signedIn === true'>Sign in</ion-item>
+      </ion-list>
+      <ion-list>
+         <ion-item menu-close ng-click='handleSignOutBtnClick()' ng-show='user.signedIn === true'>Sign out</ion-item>
+     </ion-list>
+     <ion-list>
+       <ion-item menu-close href="#user_profile">My profile</ion-item>
+     </ion-list>
+    </ion-side-menu>
+
+  </ion-side-menus>
 
       <ion-content ng-controller="FoodProductController as foodProductCtrl">
-        <ion-nav-view></ion-nav-vihapyew>
         <section ui-view></section>
       </ion-content>
   </body>
