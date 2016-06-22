@@ -28,9 +28,8 @@ angular.module('happyBellyApp')
     $scope.handleSignOutBtnClick = function() {
       //this isn't working properly - setting the CurrentUser to null manually, but it's hacky and I don't like it.
       UserService.setCurrentUserID(null);
-      $auth.signOut().then(function() {
-        validateUser('/');
-      });
+      $auth.signOut();
+      validateUser('home');
     };
 
     function validateUser(state) {

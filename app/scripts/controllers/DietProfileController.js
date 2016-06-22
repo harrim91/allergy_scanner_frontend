@@ -7,6 +7,8 @@ angular.module('happyBellyApp')
 
     var chosenIngredients = [];
 
+    console.log('poo');
+
     self.dietProfiles = getDietProfiles();
 
     $scope.selectedProfiles = {};

@@ -21,6 +21,16 @@ angular.module('happyBellyApp', ['ionic', 'ng-token-auth', 'ngCordova'])
 .config(function($authProvider, $stateProvider, $urlRouterProvider) {
   $stateProvider
 
+  .state('home', {
+    url: '/',
+    views: {
+    'menuContent': {
+      templateUrl: 'views/home.html',
+      controller: 'UserController'
+      }
+    }
+  })
+
     .state('sign_up', {
       url: '/sign_up',
       views: {
@@ -53,14 +63,22 @@ angular.module('happyBellyApp', ['ionic', 'ng-token-auth', 'ngCordova'])
 
     .state('product_info', {
       url: '/product_info',
-      templateUrl: 'views/product_info.html',
-      controller: 'FoodProductController'
+      views: {
+      'menuContent': {
+        templateUrl: 'views/product_info.html',
+        controller: 'FoodProductController'
+        }
+      }
     })
 
     .state('diet_profiles', {
       url: '/diet_profiles',
-      templateUrl: 'views/diet_profiles.html',
-      controller: 'DietProfileController'
+      views: {
+      'menuContent': {
+        templateUrl: 'views/diet_profiles.html',
+        controller: 'DietProfileController'
+        }
+      }
     })
 
     .state('user_profile', {
@@ -68,7 +86,7 @@ angular.module('happyBellyApp', ['ionic', 'ng-token-auth', 'ngCordova'])
       views: {
       'menuContent': {
         templateUrl: 'views/user_profile.html',
-        controller: 'UserController'
+        controller: 'UserProfileController'
       }
     }
   });

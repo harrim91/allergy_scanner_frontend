@@ -1,16 +1,19 @@
 angular.module('happyBellyApp')
   .controller('FoodProductController', function($scope, FoodProductService, $state, $cordovaBarcodeScanner){
 
+    console.log("foodproductcontroller")
     var self = this;
     var API_URL = 'http://world.openfoodfacts.org/api/v0/product/';
 
-    self.getProductInfo = getProductInfo;
+    // self.getProductInfo = getProductInfo;
 
-    function getProductInfo(barcode) {
+    $scope.getProductInfo = function(barcode) {
+      console.log("search barcode");
       FoodProductService.getProductInfo(API_URL, barcode).then(function(response) {
         self.foodProductInfo = response;
+        console.log(self.foodProductInfo);
+        _redirectToProductInfo();
       });
-      _redirectToProductInfo();
     }
 
     $scope.scanBarcode = function(){
@@ -22,7 +25,7 @@ angular.module('happyBellyApp')
  };
 
     function _redirectToProductInfo() {
-      $state.go('product-info');
+      $state.go('product_info');
     }
 
   });

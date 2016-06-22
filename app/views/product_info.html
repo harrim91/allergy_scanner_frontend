@@ -1,9 +1,23 @@
-<div class="card">
-  <div class="item item-text-wrap" align-title="center" >
-    <h1 id="productinfo-brand">{{ foodProductCtrl.foodProductInfo.brand }}</h1>
+ <ion-view>
+<div ng-controller="FoodProductController as foodProductCtrl">
+  <div class="item item-text-wrap" align-title="center">
+    <h1 id="productinfo-brand">{{ foodProductCtrl.foodProductInfo }}</h1>
     <h2 id="productinfo-product"> {{ foodProductCtrl.foodProductInfo.product }}</h2>
     <ul class="list" ng-repeat="ingredient in foodProductCtrl.foodProductInfo.ingredients">
       <li class="item">{{ingredient}}</li>
     </ul>
   </div>
+  hello<br/>
+  hello<br/>
+  hello<br/>
+  hello<br/>
+  hello<br/>
+  hello<br/>
+  hello<br/>
+  hello<br/>
+  hello<br/>
+  hello<br/>
+  hello<br/>
+  hello<br/>
 </div>
+</ion-view>
