@@ -17,6 +17,7 @@ angular.module('happyBellyApp')
     $scope.scanBarcode = function(){
       $cordovaBarcodeScanner.scan().then(function(imageData){
       self.getProductInfo(imageData.text);
+
     }, function(error){
      alert('an error has occured ' + error);
    });

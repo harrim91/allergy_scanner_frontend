@@ -26,6 +26,7 @@ angular.module('happyBellyApp')
     function _handleResponse(response) {
       var ingredients = _listIngredients(response);
       self.foodProductInfo = new FoodProductFactory(response.brands, response.product_name, ingredients);
+
       return self.foodProductInfo;
     }
 
