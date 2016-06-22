@@ -1,11 +1,11 @@
-describe('UserController', function() {
+describe('UserProfileController', function() {
 beforeEach(module('happyBellyApp'));
   var userController, scope;
 
 
   beforeEach(inject(function($controller, $rootScope) {
     scope = $rootScope.$new();
-    userController = $controller('UserController', {
+    userProfileController = $controller('UserProfileController', {
       $scope: scope
     });
   }));
@@ -14,7 +14,7 @@ beforeEach(module('happyBellyApp'));
     it('it formats ingredients correctly', function() {
       var ingredients = ['cheesE', 'GlUtEn', 'ScramBlEd EggS'];
       var correctIngredients = ['Cheese', 'Gluten', 'Scrambled Eggs'];
-      expect(userController.formatIngredients(ingredients)).toEqual(correctIngredients);
+      expect(userProfileController.formatIngredients(ingredients)).toEqual(correctIngredients);
     });
   });
 });
