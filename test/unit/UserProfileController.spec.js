@@ -1,6 +1,6 @@
 describe('UserProfileController', function() {
 beforeEach(module('happyBellyApp'));
-  var userController, scope;
+  var userProfileController, scope;
 
 
   beforeEach(inject(function($controller, $rootScope) {

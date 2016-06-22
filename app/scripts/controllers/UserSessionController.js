@@ -1,11 +1,10 @@
 angular.module('happyBellyApp')
-  .controller('UserController', function(UserService, $scope, $auth, $state, $rootScope){
+  .controller('UserSessionController', function(UserProfileService, $scope, $auth, $state, $rootScope){
 
     var self = this;
     var USER_INGREDIENT_URL = 'http://happy-belly-api.herokuapp.com/users/'+ $rootScope.user.id +'/ingredients';
 
     $scope.handleRegBtnClick = function() {
-      console.log(1);
       $auth.submitRegistration($scope.registrationForm)
         .then(function(response) {
           validateUser('diet_profiles');
@@ -18,7 +17,7 @@ angular.module('happyBellyApp')
     $scope.handleLoginBtnClick = function(loginForm) {
       $auth.submitLogin(loginForm)
         .then(function() {
-          validateUser('search');
+          validateUser('user_profile');
         })
         .catch(function(resp) {
           console.log(resp);
@@ -27,7 +26,7 @@ angular.module('happyBellyApp')
 
     $scope.handleSignOutBtnClick = function() {
       //this isn't working properly - setting the CurrentUser to null manually, but it's hacky and I don't like it.
-      UserService.setCurrentUserID(null);
+      // UserProfileService.setCurrentUserID(null);
       $auth.signOut();
       validateUser('home');
     };
@@ -35,14 +34,15 @@ angular.module('happyBellyApp')
     function validateUser(state) {
       $auth.validateUser().then(function(response) {
         if(response.signedIn) {
-          UserService.setCurrentUserID(response.id);
+          UserProfileService.setCurrentUserID(response.id);
           $state.go(state);
         } else {
-          UserService.setCurrentUserID(null);
+          UserProfileService.setCurrentUserID(null);
           $state.go('sign_in');
         }
       });
     }
+
 
     $rootScope.$on('auth:login-success', function(ev, user) {
       $rootScope.user = user;

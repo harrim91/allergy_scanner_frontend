@@ -26,7 +26,7 @@ angular.module('happyBellyApp', ['ionic', 'ng-token-auth', 'ngCordova'])
     views: {
     'menuContent': {
       templateUrl: 'views/home.html',
-      controller: 'UserController'
+      controller: 'UserSessionController'
       }
     }
   })
@@ -36,7 +36,7 @@ angular.module('happyBellyApp', ['ionic', 'ng-token-auth', 'ngCordova'])
       views: {
       'menuContent': {
         templateUrl: 'views/sign_up.html',
-        controller: 'UserController'
+        controller: 'UserSessionController'
         }
       }
     })
@@ -46,7 +46,7 @@ angular.module('happyBellyApp', ['ionic', 'ng-token-auth', 'ngCordova'])
       views: {
       'menuContent': {
         templateUrl: 'views/sign_in.html',
-        controller: 'UserController'
+        controller: 'UserSessionController'
         }
       }
     })
@@ -56,7 +56,7 @@ angular.module('happyBellyApp', ['ionic', 'ng-token-auth', 'ngCordova'])
       views: {
       'menuContent': {
         templateUrl: 'views/search.html',
-        controller: 'FoodProductController'
+        controller: 'SearchController'
         }
       }
     })
@@ -85,8 +85,8 @@ angular.module('happyBellyApp', ['ionic', 'ng-token-auth', 'ngCordova'])
       url: '/user_profile',
       views: {
       'menuContent': {
-        templateUrl: 'views/user_profile.html',
-        controller: 'UserProfileController'
+        templateUrl: 'views/user_profile.html'
+        // controller: 'UserProfileController'
       }
     }
   });

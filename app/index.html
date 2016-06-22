@@ -43,17 +43,18 @@
     <script src="scripts/controllers/FoodProductController.js"></script>
     <script src="scripts/factories/FoodProductFactory.js"></script>
     <script src="scripts/services/FoodProductService.js"></script>
-    <script src="scripts/controllers/UserController.js"></script>
+    <script src="scripts/controllers/UserSessionController.js"></script>
+    <script src="scripts/controllers/UserProfileController.js"></script>
+    <script src="scripts/services/UserProfileService.js"></script>
     <script src="scripts/controllers/DietProfileController.js"></script>
     <script src="scripts/services/DietProfileService.js"></script>
     <script src="scripts/factories/DietProfileFactory.js"></script>
-    <script src="scripts/services/UserService.js"></script>
-    <script src="scripts/controllers/UserController.js"></script>
+    <script src="scripts/controllers/SearchController.js"></script>
 
     <!-- endbuild -->
   </head>
 
-  <body ng-app="happyBellyApp" ng-controller="UserController as userCtrl">
+  <body ng-app="happyBellyApp" ng-controller="UserSessionController as userSessionCtrl">
 
   <ion-side-menus enable-menu-with-back-views="true">
     <ion-side-menu-content>
@@ -87,7 +88,8 @@
 
   </ion-side-menus>
 
-      <ion-content ng-controller="FoodProductController as foodProductCtrl">
+      <ion-content>
+
         <section ui-view></section>
       </ion-content>
   </body>
