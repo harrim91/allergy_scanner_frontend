@@ -30,13 +30,6 @@ I want to be able to use my Facebook account.
 
 ```
 
-Authors
--------
-- Alex Robertson
-- Mara Wanot
-- Michael Harrison
-- Sity Shah
-
 Installation
 -------
 - Clone this repo `git clone git@github.com:harrim91/allergy_scanner_frontend.git`
@@ -54,3 +47,10 @@ Use
 - On the search page, scan a barcode, or enter a barcode number of a food product.
 - This searches the [Open Food Facts API](http://world.openfoodfacts.org/data) for matches
 - If a match if found, the product name and ingredients will be displayed, along with a message indicating whether or not the product contains ingredients which you can't eat.
+
+Authors
+-------
+- [Alex Robertson](https://github.com/OMGDuke)
+- [Mara Wanot](https://github.com/GeekG1rl)
+- [Michael Harrison](https://github.com/harrim91)
+- [Sity Shah](https://github.com/sitypop)
