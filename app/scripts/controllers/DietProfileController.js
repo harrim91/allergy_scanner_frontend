@@ -27,11 +27,8 @@ angular.module('happyBellyApp')
     function formatIngredients () {
         var mergedIngredients = [].concat.apply([], chosenIngredients);
         DietProfileService.create(USER_INGREDIENT_URL, mergedIngredients).then(function(){
-          $state.go('search');
+          $state.go('user_profile');
         });
     };
-
-
-
 
   });

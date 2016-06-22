@@ -7,16 +7,9 @@ angular.module('happyBellyApp')
 
     self.getUserIngredients= function() {
       UserProfileService.getUserIngredients(USER_INGREDIENT_URL).then(function(response) {
-        objToArray(response);
+        self.userIngredients = response;
       });
     };
-
-    function objToArray(objArray) {
-      self.userIngredients = [];
-      objArray.forEach(function(obj) {
-        self.userIngredients.push(obj.name);
-      })
-    }
 
     self.formatIngredients = function(ingredients) {
       return ingredients.map(function(ingredient){

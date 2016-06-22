@@ -1,5 +1,5 @@
 angular.module('happyBellyApp')
-  .controller('FoodProductController', function($scope, FoodProductService, $state, $cordovaBarcodeScanner){
+  .controller('FoodProductController', function($scope, FoodProductService, UserProfileService, $state, $cordovaBarcodeScanner){
 
     var self = this;
     var API_URL = 'http://world.openfoodfacts.org/api/v0/product/';

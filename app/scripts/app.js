@@ -23,7 +23,7 @@ angular.module('happyBellyApp', ['ionic', 'ng-token-auth', 'ngCordova'])
     .state('sign_up', {
       url: '/sign_up',
       templateUrl: 'views/sign_up.html',
-      controller: 'UserController'
+      controller: 'UserSessionController'
     })
     .state('sign_in', {
       url: '/sign_in',
