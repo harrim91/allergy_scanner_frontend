@@ -18,7 +18,7 @@ angular.module('happyBellyApp')
       $cordovaBarcodeScanner.scan().then(function(imageData){
       self.getProductInfo(imageData.text);
     }, function(error){
-     console.log('an error has occured ' + error);
+     alert('an error has occured ' + error);
    });
  };
 
