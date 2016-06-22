@@ -3,22 +3,19 @@ angular.module('happyBellyApp')
 
     var self = this;
     self.compareIngredients = compareIngredients
-
     self.foodProductInfo = FoodProductService.foodProductInfo;
-    // console.log(UserProfileService.userIngredients);
-    // console.log(self.foodProductInfo.ingredients);
 
-
-    function compareIngredients(product, user) {
+    function compareIngredients(user, product) {
       var result = [];
-      for(var i in product) {
-          if(user.indexOf( product[i] ) > -1){
-              result.push( product[i] );
+      for(var ingredient in user) {
+          if(product.indexOf(user[ingredient]) > -1){
+              result.push(user[ingredient]);
           }
       }
+      console.log(result);
       return result.length === 0;
     }
 
-    console.log(self.compareIngredients(self.foodProductInfo.ingredients, UserProfileService.userIngredients));
+    self.canIEatThis = compareIngredients(UserProfileService.userIngredients, self.foodProductInfo.ingredients);
 
   });
