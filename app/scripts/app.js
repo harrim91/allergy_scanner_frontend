@@ -59,7 +59,8 @@ angular.module('happyBellyApp', ['ionic', 'ng-token-auth', 'ngCordova'])
 
     .state('product_info', {
       url: '/product_info',
-      templateUrl: 'views/product_info.html'
+      templateUrl: 'views/product_info.html',
+      controller: 'FoodProductController'
     })
 
     .state('diet_profiles', {

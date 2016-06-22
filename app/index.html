@@ -79,7 +79,7 @@
          <ion-item menu-close ng-click='handleSignOutBtnClick()' ng-show='user.signedIn === true'>Sign out</ion-item>
      </ion-list>
      <ion-list>
-       <ion-item menu-close href="#user_profile">My profile</ion-item>
+       <ion-item menu-close href="#user_profile" ng-show='user.signedIn === true'>My profile</ion-item>
      </ion-list>
     </ion-side-menu>
 
