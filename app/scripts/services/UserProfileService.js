@@ -1,5 +1,5 @@
 angular.module('happyBellyApp')
-  .service('UserService', function($http) {
+  .service('UserProfileService', function($http) {
 
     var self = this;
 

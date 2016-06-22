@@ -1,9 +1,9 @@
 angular.module('happyBellyApp')
-  .controller('DietProfileController', function(UserService, DietProfileService, $scope, $state){
+  .controller('DietProfileController', function(UserProfileService, DietProfileService, $scope, $state){
 
     var self = this;
     var DIET_PROFILE_URL = 'http://happy-belly-api.herokuapp.com/diet_profiles';
-    var USER_INGREDIENT_URL = 'http://happy-belly-api.herokuapp.com/users/'+ UserService.currentUserID +'/ingredients';
+    var USER_INGREDIENT_URL = 'http://happy-belly-api.herokuapp.com/users/'+ UserProfileService.currentUserID +'/ingredients';
 
     var chosenIngredients = [];
 
