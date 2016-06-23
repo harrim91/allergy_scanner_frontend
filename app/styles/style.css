@@ -30,10 +30,11 @@
 
 .bar.bar-stable .title {
   color: white;
-  font-family: Oswald;
+  font-family: Sue Ellen Francisco;
   letter-spacing: 5px;
-  font-size: 20px;
+  font-size: 25px;
   text-shadow: #000000 0.5px 0.5px;
+  text-decoration: none;
   }
 
   .menu {
@@ -41,6 +42,35 @@
   }
 
   .side-title {
-    font-family: Oswald;
+    font-family: Sue Ellen Francisco;
     letter-spacing: 5px;
+    font-size: 25px;
+  }
+
+  .button {
+    background-color:#ff9900;
+    font-family: Sue Ellen Francisco;
+    font-size: 25px;
+  }
+
+  .button-scan {
+    background-color: #ffff80;
+  }
+
+  .card {
+    color: #e6e6e6 !important;
+    font-family: Sue Ellen Francisco;
+  }
+
+  .form {
+    font-family: Sue Ellen Francisco;
+    font-size: 30px !important;
+  }
+
+  #square {
+    min-width: 70%;
+    max-width: 70%;
+    min-height: 40%;
+    max-height: 40%;
+    background-color: #ffff80;
   }
