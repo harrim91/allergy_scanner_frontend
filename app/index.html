@@ -60,7 +60,7 @@
   <body ng-app="happyBellyApp" ng-controller="UserSessionController as userSessionCtrl">
 
   <ion-side-menus enable-menu-with-back-views="true">
-    <ion-side-menu-content>
+    <ion-side-menu-content drag-content="false">
 
       <ion-header-bar class="bar-stable header-bar">
         <div class="buttons">
@@ -76,16 +76,16 @@
 
     <ion-side-menu side="left">
       <ion-list>
-          <ion-item class="side-title" menu-close href="#sign_up" ng-hide='user.signedIn === true'><i class="icon ion-home"></i> Sign up</ion-item>
+          <ion-item class="side-title" menu-close href="#sign_up" ng-hide='user.signedIn === true'><i class="icon ion-person"></i> Sign up</ion-item>
        </ion-list>
        <ion-list>
-          <ion-item class="side-title" menu-close href="#sign_in" ng-hide='user.signedIn === true'><i class="icon ion-home"></i> Sign in</ion-item>
+          <ion-item class="side-title" menu-close href="#sign_in" ng-hide='user.signedIn === true'><i class="icon ion-person-add"></i> Sign in</ion-item>
       </ion-list>
       <ion-list>
-         <ion-item class="side-title" menu-close ng-click='handleSignOutBtnClick()' ng-show='user.signedIn === true'><i class="icon ion-home"></i> Sign out</ion-item>
+         <ion-item class="side-title" menu-close ng-click='handleSignOutBtnClick()' ng-show='user.signedIn === true'><i class="icon ion-log-out"></i> Sign out</ion-item>
      </ion-list>
      <ion-list>
-       <ion-item class="side-title" menu-close href="#user_profile" ng-show='user.signedIn === true'><i class="icon ion-home"></i> My profile</ion-item>
+       <ion-item class="side-title" menu-close href="#user_profile" ng-show='user.signedIn === true'><i class="icon ion-ios-body"></i> My profile</ion-item>
      </ion-list>
     </ion-side-menu>
 

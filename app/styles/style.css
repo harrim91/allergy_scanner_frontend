@@ -146,10 +146,54 @@
 
   }
 
-  #signing {
+.profile-name {
+  font-family: Oswald;
+  letter-spacing: 2px;
+  background: #ff9900;
+  text-shadow: #fff 1px 0.2px;
+}
 
-  }
+.ingredient-name {
+  font-size: 20px;
+  color: #000;
+  letter-spacing: 1.5px;
+  line-height: normal;
+}
+
+#ingredient-title {
+  font-family: Sue Ellen Francisco;
+  font-size: 23px;
+  color: #000;
+  text-decoration: underline;
+  letter-spacing: 1.5px;
+  line-height: normal;
+}
 
   #orange-button {
     box-shadow: 0 4px 7px rgba(0, 0, 0, 0.4)
+  }
+
+  .checkbox input:checked:before, .checkbox input:checked + .checkbox-icon:before {
+    background: #00cc99 !important;
+    border-color: #00cc99 !important;
+  }
+
+  #diet-profile {
+    margin-top: 60px;
+  }
+
+  #title {
+    text-align: center;
+    font-family: Oswald;
+    letter-spacing: 2px;
+  }
+
+  #user-header {
+    background-color: #ff9900;
+  }
+
+  #user-title {
+    font-family: Oswald;
+    letter-spacing: 2px;
+    background-color: ##ff9900;
   }
