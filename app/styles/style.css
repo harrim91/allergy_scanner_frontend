@@ -28,9 +28,9 @@
   border-radius: 50%;
 }
 
-.bar.bar-stable .title {
+.bar.bar-stable .title a{
   color: white;
-  font-family: Sue Ellen Francisco;
+  font-family: Oswald;
   letter-spacing: 5px;
   font-size: 25px;
   text-shadow: #000000 0.5px 0.5px;
@@ -51,6 +51,9 @@
     background-color:#ff9900;
     font-family: Sue Ellen Francisco;
     font-size: 25px;
+    padding: 7px;
+    min-width: 52px;
+    min-height: 53px;
   }
 
   .button-scan {
@@ -68,9 +71,85 @@
   }
 
   #square {
-    min-width: 70%;
-    max-width: 70%;
-    min-height: 40%;
-    max-height: 40%;
+    width: 250px;
+    height: 250px;
+    position: absolute;
     background-color: #ffff80;
+    left: 50px;
+    bottom: 250px;
+    box-shadow: 0 4px 7px rgba(0, 0, 0, 0.4)
+  }
+
+  .logo-circle {
+    background: #00CC99;
+    border-radius: 50%;
+    width: 150px;
+    padding-left: 7px;
+    -webkit-flex: none;
+    margin: auto;
+  }
+
+  #scan-button {
+    width: 50%;
+    height: 54%;
+    overflow: auto;
+    margin: auto;
+    position: absolute;
+    top: -20px;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: transparent;
+    border: none;
+  }
+
+  .camera-button {
+    width: 50%;
+    height: 54%;
+    overflow: auto;
+    margin: auto;
+    position: absolute;
+    top: -20px,auto;left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: transparent;
+    border: none;
+
+  }
+
+  #camera {
+    height: 100px;
+    width: 100px;
+  }
+
+
+  #enter-barcode {
+    position: absolute;
+    margin: 210px 0;
+    padding: 18px 0 5px 16px;
+  }
+
+  #enter-barcode .item {
+    border-width: 2px;
+  }
+
+  #barcode-input {
+    font-size: 20px !important;
+    height: 31px;
+    font-family: Sue Ellen Francisco;
+    border-width: 2px !important;
+  }
+
+  #barcode-submit {
+    background-color: #ffff80;
+    box-shadow: 0 4px 7px rgba(0, 0, 0, 0.4);
+
+  }
+
+  #signing {
+
+  }
+
+  #orange-button {
+    box-shadow: 0 4px 7px rgba(0, 0, 0, 0.4)
   }
