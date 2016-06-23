@@ -18,3 +18,24 @@
     top:50%;
     transform:translateY(-50%);
 }
+
+.circle {
+  min-width: 70%;
+  max-width: 70%;
+  min-height: 40%;
+  max-height: 40%;
+  background-color: #00cc99;
+  border-radius: 50%;
+}
+
+.bar.bar-stable .title {
+  color: white;
+  font-family: Oswald;
+  letter-spacing: 5px;
+  font-size: 20px;
+  text-shadow: #000000 0.5px 0.5px;
+  }
+
+  .menu {
+    background-color:  #e6e6e6;
+  }
