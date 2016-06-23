@@ -39,3 +39,8 @@
   .menu {
     background-color:  #e6e6e6;
   }
+
+  .side-title {
+    font-family: Oswald;
+    letter-spacing: 5px;
+  }

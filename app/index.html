@@ -12,6 +12,7 @@
     <!-- endbuild -->
     <link href="styles/style.css" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Sue+Ellen+Francisco' rel='stylesheet' type='text/css'>
 
     <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
     <link href="styles/ionic.app.css" rel="stylesheet">
@@ -64,7 +65,7 @@
         <div class="buttons">
           <button class = "button button-icon icon ion-navicon" menu-toggle="left"></button>
         </div>
-        <h1 class="title" autofocus=""text-align="center">HAPPY BELLY</h1>
+        <h1 class="title" text-align="center">HAPPY BELLY</h1>
         <a class="button button-icon icon ion-search" href="#search" ng-show='user.signedIn === true'></a>
       </ion-header-bar>
 
@@ -74,16 +75,16 @@
 
     <ion-side-menu side="left">
       <ion-list>
-          <ion-item menu-close href="#sign_up" ng-hide='user.signedIn === true'>Sign up</ion-item>
+          <ion-item class="side-title" menu-close href="#sign_up" ng-hide='user.signedIn === true'>Sign up</ion-item>
        </ion-list>
        <ion-list>
-          <ion-item menu-close href="#sign_in" ng-hide='user.signedIn === true'>Sign in</ion-item>
+          <ion-item class="side-title" menu-close href="#sign_in" ng-hide='user.signedIn === true'>Sign in</ion-item>
       </ion-list>
       <ion-list>
-         <ion-item menu-close ng-click='handleSignOutBtnClick()' ng-show='user.signedIn === true'>Sign out</ion-item>
+         <ion-item class="side-title" menu-close ng-click='handleSignOutBtnClick()' ng-show='user.signedIn === true'>Sign out</ion-item>
      </ion-list>
      <ion-list>
-       <ion-item menu-close href="#user_profile" ng-show='user.signedIn === true'>My profile</ion-item>
+       <ion-item class="side-title" menu-close href="#user_profile" ng-show='user.signedIn === true'>My profile</ion-item>
      </ion-list>
     </ion-side-menu>
 
