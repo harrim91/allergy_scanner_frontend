@@ -4,16 +4,16 @@
 
     <div class="card">
       <div class="item item-text-wrap" id="signing">
+        <div class="logo-circle smaller-logo">
+          <img class='smaller-logo' ng-src="images/logo.png" alt="Happy Belly Logo" />
+        </div>
+        <label class="item item-input">
+          <input class="form" placeholder="Email" type="email" name="email" ng-model="loginForm.email" required="required" class="form-control"/>
+        </label>
 
-          <label class="item item-input">
-            <input class="form" placeholder="Email" type="email" name="email" ng-model="loginForm.email" required="required" class="form-control"/>
-          </label>
-
-          <label class="item item-input">
-            <input class="form" placeholder="Password" type="password" name="password" ng-model="loginForm.password" required="required" class="form-control"/>
-          </label>
-
-
+        <label class="item item-input">
+          <input class="form" placeholder="Password" type="password" name="password" ng-model="loginForm.password" required="required" class="form-control"/>
+        </label>
       </div>
     </div>
     <button id="orange-button" class="button" type="submit" href="#search">Sign in</button>

@@ -60,6 +60,15 @@
     background-color: #ffff80;
   }
 
+  .smaller-logo {
+    max-width: 75px;
+    height: 75px;
+    padding-top: 5px;
+    padding-right: 10px;
+    padding-bottom: 20px;
+    padding-left: 10px;
+  }
+
   .card {
     color: #e6e6e6 !important;
     font-family: Sue Ellen Francisco;
