@@ -1,12 +1,18 @@
-<div class="card">
-  <h1> My Profile:<h1> {{ user.email }}
+<div class="row row-center">
+  <div class="col text-center">
+    <div class="card">
 
-    <div ng-controller="UserProfileController as userProfileCtrl" >
-      <h3>My ingredients to avoid:</h3>
-      <div ng-repeat="ingredient in userProfileCtrl.userIngredients">
-        <ul>
-          <li>{{ ingredient }}</li>
-        </ul>
+        <div ng-controller="UserProfileController as userProfileCtrl">
+          <div id="user-header">
+            <h3 id="user-title">{{ user.email }}</h3>
+          </div>
+          <h3 id="ingredient-title">My ingredients to avoid:</h3>
+          <div ng-repeat="ingredient in userProfileCtrl.userIngredients">
+            <ul>
+              <li class="ingredient-name">{{ ingredient }}</li>
+            </ul>
+        </div>
       </div>
     </div>
+  </div>
 </div>

@@ -1,1 +1,274 @@
 /* Empty. Add your own CSS if you like */
+.header-bar {
+  background-color: #00cc99 !important;
+  border-color: #00cc99 !important;
+}
+
+.logo {
+  border-radius: 50%;
+  width: 50%;
+  height: auto;
+}
+
+.home-container .row-center {
+    position:absolute;
+    left: 0;
+    right: 0;
+    margin:0 auto;
+    top:50%;
+    transform:translateY(-50%);
+}
+
+.circle {
+  min-width: 70%;
+  max-width: 70%;
+  min-height: 40%;
+  max-height: 40%;
+  background-color: #00cc99;
+  border-radius: 50%;
+}
+
+.bar.bar-stable .title a{
+  color: white;
+  font-family: Oswald;
+  letter-spacing: 5px;
+  font-size: 25px;
+  text-shadow: #000000 0.5px 0.5px;
+  text-decoration: none;
+  }
+
+  .menu {
+    background-color:  #e6e6e6;
+  }
+
+  .side-title {
+    font-family: Sue Ellen Francisco;
+    letter-spacing: 5px;
+    font-size: 25px;
+  }
+
+  .button {
+    background-color:#ff9900;
+    font-family: Sue Ellen Francisco;
+    font-size: 25px;
+    padding:  7px 14px;
+    min-width: 52px;
+    min-height: 53px;
+  }
+
+  .button-scan {
+    background-color: #ffff80;
+  }
+
+  .smaller-logo {
+    max-width: 75px;
+    height: 75px;
+    padding-top: 5px;
+    padding-right: 10px;
+    padding-bottom: 20px;
+    padding-left: 10px;
+  }
+
+  .card {
+    color: #e6e6e6 !important;
+    font-family: Sue Ellen Francisco;
+  }
+
+  .form {
+    font-family: Sue Ellen Francisco;
+    font-size: 23px !important;
+  }
+
+  #square {
+    width: 250px;
+    height: 250px;
+    position: absolute;
+    background-color: #ffff80;
+    left: 50px;
+    bottom: 250px;
+    box-shadow: 0 4px 7px rgba(0, 0, 0, 0.4)
+  }
+
+  .logo-circle {
+    background: #00CC99;
+    border-radius: 50%;
+    width: 150px;
+    padding-left: 7px;
+    -webkit-flex: none;
+    margin: auto;
+  }
+
+  #scan-button {
+    width: 50%;
+    height: 54%;
+    overflow: auto;
+    margin: auto;
+    position: absolute;
+    top: -20px;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: transparent;
+    border: none;
+  }
+
+  .camera-button {
+    width: 50%;
+    height: 54%;
+    overflow: auto;
+    margin: auto;
+    position: absolute;
+    top: -20px,auto;left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: transparent;
+    border: none;
+
+  }
+
+  #camera {
+    height: 100px;
+    width: 100px;
+  }
+
+
+  #enter-barcode {
+    position: absolute;
+    margin: 210px 0;
+    padding: 18px 0 5px 16px;
+  }
+
+  #enter-barcode .item {
+      border-width: 2px;
+      height: 60px;
+      width: 188px;
+  }
+
+  #barcode-input {
+    font-size: 20px !important;
+    height: 31px;
+    font-family: Sue Ellen Francisco;
+    border-width: 2px !important;
+  }
+
+  #barcode-submit {
+    background-color: #ffff80;
+    box-shadow: 0 4px 7px rgba(0, 0, 0, 0.4);
+    margin-left: 7px;
+  }
+
+.profile-name {
+  font-family: Oswald;
+  letter-spacing: 2px;
+  background: #ff9900;
+  text-shadow: #fff 1px 0.2px;
+}
+
+.ingredient-name {
+  font-size: 20px;
+  color: #000;
+  letter-spacing: 1.5px;
+  line-height: normal;
+}
+
+#ingredient-title {
+  font-family: Sue Ellen Francisco;
+  font-size: 23px;
+  color: #000;
+  text-decoration: underline;
+  letter-spacing: 1.5px;
+  line-height: normal;
+}
+
+  #orange-button {
+    box-shadow: 0 4px 7px rgba(0, 0, 0, 0.4)
+  }
+
+  .checkbox input:checked:before, .checkbox input:checked + .checkbox-icon:before {
+    background: #00cc99 !important;
+    border-color: #00cc99 !important;
+  }
+
+  #diet-profile {
+    margin-top: 60px;
+  }
+
+  #title {
+    text-align: center;
+    font-family: Oswald;
+    letter-spacing: 2px;
+  }
+
+  #user-header {
+    background-color: #ff9900;
+  }
+
+  #user-title {
+    font-family: Oswald;
+    letter-spacing: 2px;
+    background-color: ##ff9900;
+  }
+
+  #productinfo-brand {
+    font-family: Sue Ellen Francisco;
+    font-size: 23px;
+  }
+
+  #product {
+    background-color: #ffff80;
+  }
+
+  #productinfo-product {
+    font-family: Oswald;
+    letter-spacing: 2px;
+    text-shadow: #fff 1px 1px;
+  }
+
+  #cannot-eat {
+    font-family: Sue Ellen Francisco;
+    font-size: 35px;
+    color: #000;
+  }
+
+
+#or {
+  margin: 81px 0 0 0;
+  position: absolute;
+}
+
+#or span {
+  margin: auto;
+  font-size: 35px;
+  color: #B4B4B4;
+  font-family: Oswald;
+  letter-spacing: 2px;
+  padding: 35px 22px 0 0;
+}
+
+#or span:before,#or span:after {
+  content: "-----------------------";
+  letter-spacing: -1px;
+  padding: 10px;
+}
+
+#yes-result {
+  width: 150px;
+}
+
+#no-result {
+  width: 130px
+
+}
+
+#result {
+  padding-top: 10px;
+}
+
+#item {
+  background-color:#ffff80;
+  font-family: Oswald;
+  letter-spacing: 2px;
+  text-shadow: #fff 1px 1px;
+  color: #000;
+  font-size: 25px;
+}
