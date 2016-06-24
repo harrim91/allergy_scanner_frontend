@@ -51,7 +51,7 @@
     background-color:#ff9900;
     font-family: Sue Ellen Francisco;
     font-size: 25px;
-    padding: 7px;
+    padding:  7px 14px;
     min-width: 52px;
     min-height: 53px;
   }
@@ -67,7 +67,7 @@
 
   .form {
     font-family: Sue Ellen Francisco;
-    font-size: 30px !important;
+    font-size: 23px !important;
   }
 
   #square {
@@ -135,7 +135,9 @@
   }
 
   #enter-barcode .item {
-    border-width: 2px;
+      border-width: 2px;
+      height: 60px;
+      width: 188px;
   }
 
   #barcode-input {
@@ -149,7 +151,7 @@
   #barcode-submit {
     background-color: #ffff80;
     box-shadow: 0 4px 7px rgba(0, 0, 0, 0.4);
-
+    margin-left: 7px;
   }
 
 .profile-name {
@@ -212,3 +214,67 @@
     letter-spacing: 2px;
     background-color: ##ff9900;
   }
+
+  #productinfo-brand {
+    font-family: Sue Ellen Francisco;
+    font-size: 23px;
+  }
+
+  #product {
+    background-color: #ffff80;
+  }
+
+  #productinfo-product {
+    font-family: Oswald;
+    letter-spacing: 2px;
+    text-shadow: #fff 1px 1px;
+  }
+
+  #cannot-eat {
+    font-family: Sue Ellen Francisco;
+    font-size: 35px;
+    color: #000;
+  }
+
+
+#or {
+  margin: 81px 0 0 0;
+  position: absolute;
+}
+
+#or span {
+  margin: auto;
+  font-size: 35px;
+  color: #B4B4B4;
+  font-family: Oswald;
+  letter-spacing: 2px;
+  padding: 35px 22px 0 0;
+}
+
+#or span:before,#or span:after {
+  content: "-----------------------";
+  letter-spacing: -1px;
+  padding: 10px;
+}
+
+#yes-result {
+  width: 150px;
+}
+
+#no-result {
+  width: 130px
+
+}
+
+#result {
+  padding-top: 10px;
+}
+
+#item {
+  background-color:#ffff80;
+  font-family: Oswald;
+  letter-spacing: 2px;
+  text-shadow: #fff 1px 1px;
+  color: #000;
+  font-size: 25px;
+}
