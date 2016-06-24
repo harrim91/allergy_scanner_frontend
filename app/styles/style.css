@@ -77,7 +77,11 @@
     background-color: #ffff80;
     left: 50px;
     bottom: 250px;
-    box-shadow: 0 4px 7px rgba(0, 0, 0, 0.4)
+    box-shadow: 0 4px 7px rgba(0, 0, 0, 0.4);
+  }
+
+  #square.active {
+    box-shadow: 0 20px 20px rgba(0, 0, 0, 50);
   }
 
   .logo-circle {
@@ -87,6 +91,7 @@
     padding-left: 7px;
     -webkit-flex: none;
     margin: auto;
+    margin-bottom: 20px;
   }
 
   #scan-button {
@@ -138,6 +143,7 @@
     height: 31px;
     font-family: Sue Ellen Francisco;
     border-width: 2px !important;
+    width: 30px
   }
 
   #barcode-submit {
@@ -168,6 +174,15 @@
   letter-spacing: 1.5px;
   line-height: normal;
 }
+
+  .smaller-logo {
+    max-width: 75px;
+    height: 75px;
+    padding-top: 5px;
+    padding-right: 10px;
+    padding-bottom: 20px;
+    padding-left: 10px;
+  }
 
   #orange-button {
     box-shadow: 0 4px 7px rgba(0, 0, 0, 0.4)

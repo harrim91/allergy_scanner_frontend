@@ -1,25 +1,21 @@
-<ion-view>
-  <ion-content>
-    <div class="row row-center" id="diet-profile">
-      <div class="col col-center">
-        <div ng-controller="DietProfileController as dietProfileCtrl">
-          <h3 id="title">DEFAULT PROFILES</h3>
-            <ion-list>
-            <div ng-repeat="profile in dietProfileCtrl.dietProfiles">
-              <div class="card" id="profile-box">
-                <ion-checkbox name="name" class="profile-name" ng-true-value='{{profile.ingredients}}' ng-model="selectedProfiles[profile.name]"> {{ profile.name.toUpperCase() }}</ion-checkbox>
-                <strong id="ingredient-title">Ingredients</strong>
-                <ul>
-                 <li class="ingredient-name" ng-repeat="ingredient in profile.ingredients">
-                    {{ ingredient.name }}
-                 </li>
-                </ul>
-              </div>
-            </div>
-            <button id="orange-button" class="button" ng-click="dietProfileCtrl.cleanFalse(selectedProfiles)">Submit</button>
-          </ion-list>
+<ion-view >
+  <ionic-content>
+    <div ng-controller="DietProfileController as dietProfileCtrl">
+      <h1>Diet profiles</h1>
+        <ion-list>
+        <div ng-repeat="profile in dietProfileCtrl.dietProfiles">
+          <div class="card">
+            <ion-checkbox name="name" class="profile-name" ng-true-value='{{profile.ingredients}}' ng-model="selectedProfiles[profile.name]"> {{ profile.name }}</ion-checkbox>
+            Ingredients:
+            <ul>
+             <li class="ingredient-name" ng-repeat="ingredient in profile.ingredients">
+                {{ ingredient.name }}
+             </li>
+            </ul>
+          </div>
         </div>
-      </div>
+        <button class="button button-block button-stable" ng-click="dietProfileCtrl.cleanFalse(selectedProfiles)">Submit</button>
+      </ion-list>
     </div>
-  </ion-content>
+  </ionic-content>
 </ion-view>
