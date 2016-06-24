@@ -2,8 +2,6 @@
  <div class="col text-center">
    <div class="card">
      <div ng-controller="FoodProductController as foodProductCtrl">
-      <!-- <i class="icon ion-close-circled" ng-hide="foodProductCtrl.canIEatThis">
-      <i class="icon ion-checkmark-circled" ng-show="foodProductCtrl.canIEatThis"> -->
        <h1 id="productinfo-brand"> {{ foodProductCtrl.foodProductInfo.brand }}</h1>
        <h2 id="productinfo-product">{{ foodProductCtrl.foodProductInfo.product }}</h2>
        <ul class="list" ng-repeat="ingredient in foodProductCtrl.iCantEat">

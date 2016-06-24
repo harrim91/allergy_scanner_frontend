@@ -1,33 +1,17 @@
 <div class="row row-center">
   <div class="col text-center">
     <div class="card">
-
-        <div ng-controller="UserProfileController as userProfileCtrl">
-          <div id="user-header">
-            <h3 id="user-title">{{ user.email }}</h3>
-          </div>
-          <h3 id="ingredient-title">My ingredients to avoid:</h3>
-          <div ng-repeat="ingredient in userProfileCtrl.userIngredients">
-            <ul>
-              <li class="ingredient-name">{{ ingredient }}</li>
-            </ul>
+      <div ng-controller="UserProfileController as userProfileCtrl">
+        <div id="user-header">
+          <h3 id="user-title">{{ user.email }}</h3>
+        </div>
+        <h3 id="ingredient-title">My ingredients to avoid:</h3>
+        <div ng-repeat="ingredient in userProfileCtrl.userIngredients">
+          <ul>
+            <li class="ingredient-name">{{ ingredient }}</li>
+          </ul>
         </div>
       </div>
     </div>
   </div>
-</div>
-
-
-
-<!-- <div class="card" id="profile-box">
-  <ion-checkbox name="name" class="profile-name" ng-true-value='{{profile.ingredients}}' ng-model="selectedProfiles[profile.name]"> {{ profile.name.toUpperCase() }}</ion-checkbox>
-  <strong id="ingredient-title">Ingredients</strong>
-
-  <ul>
-   <li class="ingredient-name" ng-repeat="ingredient in profile.ingredients">
-      {{ ingredient.name }}
-
-   </li>
-  </ul>
-</div> -->
 </div>

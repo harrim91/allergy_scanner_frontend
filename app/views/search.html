@@ -1,23 +1,18 @@
 <div class="row row-center">
   <div class="col text-center">
-  <div ng-controller="SearchController as searchCtrl">
-    <form ng-submit="getProductInfo(barcode)" role="form">
-
-      <div class="card" id="square">
-        <button id='scan-button' ng-click="scanBarcode()" class="camera-button"><img id="camera" src="http://www.freeiconspng.com/uploads/camera-icon-png-iphoto-24.png"/></button>
-      </div>
-
-
-    <div class="row row-bottom" id="enter-barcode">
-      <label class="item item-input">
-        <i class="icon ion-search placeholder-icon"></i>
-        <input ng-model="barcode" id="barcode-input" type="search" required="required" placeholder="Enter barcode">
-      </label>
-        <button type="submit" id="barcode-submit" class="button">Search Barcode</button>
+    <div ng-controller="SearchController as searchCtrl">
+      <form ng-submit="getProductInfo(barcode)" role="form">
+        <div class="card" id="square">
+          <button id='scan-button' ng-click="scanBarcode()" class="camera-button"><img id="camera" src="http://www.freeiconspng.com/uploads/camera-icon-png-iphoto-24.png"/></button>
+        </div>
+        <div class="row row-bottom" id="enter-barcode">
+          <label class="item item-input">
+            <i class="icon ion-search placeholder-icon"></i>
+            <input ng-model="barcode" id="barcode-input" type="search" required="required" placeholder="Enter barcode">
+          </label>
+          <button type="submit" id="barcode-submit" class="button">Search Barcode</button>
+        </div>
       </form>
-    </div>
-
       </div>
     </div>
-</div>
 </div>
