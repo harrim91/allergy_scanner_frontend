@@ -1,14 +1,20 @@
 <div class="row row-center">
  <div class="col text-center">
-   <div class="card">
-     <div ng-controller="FoodProductController as foodProductCtrl">
+   <div class="card" id="product">
+     <div ng-controller="FoodProductController as foodProductCtrl" id="result">
+       <img id="no-result" src="/images/no.png" ng-hide="foodProductCtrl.canIEatThis"/>
+       <img id="yes-result" src="/images/tick.png" ng-show="foodProductCtrl.canIEatThis"/>
+
       <!-- <i class="icon ion-close-circled" ng-hide="foodProductCtrl.canIEatThis">
       <i class="icon ion-checkmark-circled" ng-show="foodProductCtrl.canIEatThis"> -->
        <h1 id="productinfo-brand"> {{ foodProductCtrl.foodProductInfo.brand }}</h1>
-       <h2 id="productinfo-product">{{ foodProductCtrl.foodProductInfo.product }}</h2>
-       <ul class="list" ng-repeat="ingredient in foodProductCtrl.iCantEat">
-         <li class="item"> {{ingredient}} </li>
-       </ul>
+       <h2 id="productinfo-product">{{ foodProductCtrl.foodProductInfo.product.toUpperCase() }}</h2>
+       <h6 id="cannot-eat" ng-hide="foodProductCtrl.canIEatThis">
+         Ek! This contains:
+         <ul class="list" ng-repeat="ingredient in foodProductCtrl.iCantEat">
+           <li id="item" class="item"> {{ingredient.toUpperCase() }} </li>
+         </ul>
+       </h6>
      </div>
    </div>
  </div>
