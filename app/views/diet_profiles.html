@@ -1,4 +1,5 @@
 <ion-view name='di'>
+  <ion-scroll zooming="false" direction="y" scrollbar-y='true' style="width: 500px; height: 3000px">
   <div ng-controller="DietProfileController as dietProfileCtrl">
     <h1>Diet profiles</h1>
       <ion-list>
@@ -16,4 +17,5 @@
       <button class="button button-block button-stable" ng-click="dietProfileCtrl.cleanFalse(selectedProfiles)">Submit</button>
     </ion-list>
   </div>
+</ion-scroll>
 </ion-view>
