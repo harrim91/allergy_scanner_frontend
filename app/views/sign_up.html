@@ -1,29 +1,23 @@
 <div class="row row-center">
   <div class="col text-center">
-
-    <div class="card">
-      <div class="item item-text-wrap">
-        <div class="logo-circle smaller-logo">
-          <img class='smaller-logo' ng-src="images/logo.png" alt="Happy Belly Logo" />
-        </div>
-        <form ng-submit="handleRegBtnClick(registrationForm)" role="form" ng-init="registrationForm = {}">
-
+    <form ng-submit="handleRegBtnClick(registrationForm)" role="form" ng-init="registrationForm = {}">
+      <div class="card">
+        <div class="item item-text-wrap">
+          <div class="logo-circle smaller-logo">
+            <img class='smaller-logo' ng-src="images/logo.png" alt="Happy Belly Logo" />
+          </div>
           <label class="item item-input">
             <input class="form" id='email' type="email" name="email" ng-model="registrationForm.email" required="required" placeholder="Email"/>
           </label>
-
           <label class="item item-input">
             <input class="form" d='password' type="password" name="password" ng-model="registrationForm.password" required="required" placeholder="Password"/>
           </label>
-
           <label class="item item-input">
             <input class="form" id='password-conf' type="password" name="password_confirmation" ng-model="registrationForm.password_confirmation" required="required" placeholder="Password confirmation"/>
           </label>
-
+          <button id='orange-button' type="submit" class="button">Sign up</button>
         </form>
       </div>
     </div>
-    <button id='orange-button' type="submit" class="button">Sign up</button>
-
   </div>
 </div>
