@@ -1,7 +1,12 @@
-# Happy Belly App
+# Makers Academy Final Project
 
-Makers Academy Final Project
-----------------------------
+<img src="app/images/homepage.png"/>
+
+<img src="app/images/scan.png"/>
+
+About
+-----
+
 The app is designed to help people with food allergies or dietary requirements quickly know whether they can eat a certain food.
 It also has a (rails backend)[https://github.com/harrim91/allergy_scanner_backend].
 
@@ -26,9 +31,6 @@ I want to be told if the product I have searched for contains an ingredient I ha
 So that I can quickly find the product,
 I want to be able to scan the barcode.
 
-So that I can quickly sign in/up,
-I want to be able to use my Facebook account.
-
 ```
 
 Installation
@@ -49,8 +51,8 @@ Use
 - This searches the [Open Food Facts API](http://world.openfoodfacts.org/data) for matches
 - If a match if found, the product name and ingredients will be displayed, along with a message indicating whether or not the product contains ingredients which you can't eat.
 
+Click [here] (https://www.youtube.com/watch?v=nXFJiu1-xMI&feature=youtu.be) to watch the demo.
 
-<iframe width="854" height="480" src="https://www.youtube.com/embed/nXFJiu1-xMI" frameborder="0" allowfullscreen></iframe>
 
 Authors
 -------
