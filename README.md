@@ -1,9 +1,12 @@
 # Makers Academy Final Project
 
+<p align="center">
 ![homepage](app/images/homepage.png)  
+</p>
 
-
+<p align="center">
 ![scanner](app/images/scan.png)
+</p>
 
 
 About
