@@ -49,9 +49,8 @@ Use
 - This searches the [Open Food Facts API](http://world.openfoodfacts.org/data) for matches
 - If a match if found, the product name and ingredients will be displayed, along with a message indicating whether or not the product contains ingredients which you can't eat.
 
-Demo
-------
-(https://www.youtube.com/watch?v=nXFJiu1-xMI&feature=youtu.be)
+
+<iframe width="854" height="480" src="https://www.youtube.com/embed/nXFJiu1-xMI" frameborder="0" allowfullscreen></iframe>
 
 Authors
 -------
