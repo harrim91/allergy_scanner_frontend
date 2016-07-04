@@ -10,7 +10,7 @@ About
 -----
 
 The app is designed to help people with food allergies or dietary requirements quickly know whether they can eat a certain food. Or not.
-It also has a [rails backend] (https://github.com/harrim91/allergy_scanner_backend).
+It also has a [rails backend] (https://github.com/sitypop/allergy_scanner_backend).
 
 User Stories
 ------------
