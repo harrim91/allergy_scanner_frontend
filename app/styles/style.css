@@ -80,8 +80,8 @@
   }
 
   #square {
-    width: 250px;
-    height: 250px;
+    width: 70%;
+    height: 40%;
     position: absolute;
     background-color: #ffff80;
     left: 50px;
@@ -134,7 +134,7 @@
 
   #enter-barcode {
     position: absolute;
-    margin: 210px 0;
+    margin: 45% 0;
     padding: 18px 0 5px 16px;
   }
 
@@ -232,7 +232,7 @@
 
 
 #or {
-  margin: 81px 0 0 0;
+  margin: 10% 0 0 0;
   position: absolute;
 }
 
@@ -246,9 +246,9 @@
 }
 
 #or span:before,#or span:after {
-  content: "-----------------------";
+  content: "----------------";
   letter-spacing: -1px;
-  padding: 10px;
+  padding: 0px;
 }
 
 #yes-result {
