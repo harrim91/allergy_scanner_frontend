@@ -3,7 +3,7 @@
 Makers Academy Final Project
 ----------------------------
 The app is designed to help people with food allergies or dietary requirements quickly know whether they can eat a certain food.
-It also has a (rails backend)[https://github.com/harrim91/allergy_scanner_backend].
+It also has a [rails backend](https://github.com/harrim91/allergy_scanner_backend).
 
 User Stories
 ------------
@@ -37,7 +37,7 @@ Installation
 - Ensure you have node.js, bower, grunt and ionic installed.
 - `npm install`
 - `bower install`
-- To run the app in your browser - grunt serve
+- To run the app in your browser - `grunt serve`
 
 Use
 -------
