@@ -12,8 +12,8 @@
 About
 -----
 
-The app is designed to help people with food allergies or dietary requirements quickly know whether they can eat a certain food. Or not.
-It also has a [rails backend] (https://github.com/sitypop/allergy_scanner_backend).
+The app is designed to help people with food allergies or dietary requirements quickly know whether they can eat a certain food.
+It also has a [rails backend] (https://github.com/harrim91/allergy_scanner_backend).
 
 User Stories
 ------------
@@ -44,7 +44,7 @@ Installation
 - Ensure you have node.js, bower, grunt and ionic installed.
 - `npm install`
 - `bower install`
-- To run the app in your browser - grunt serve
+- To run the app in your browser - `grunt serve`
 
 Use
 -------
